@@ -2,14 +2,17 @@
   <main>
     <Navbar />
     <Nuxt class="scroll-smooth" />
+    <Bottonnav/>
   </main>
 </template>
 
 <script>
 import Navbar from "~/components/Navbar.vue";
+import Bottonnav from "~/components/Bottomnav.vue";
 export default {
   components: {
     Navbar,
+    Bottonnav
   },
   mounted() {
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -22,7 +25,7 @@ export default {
     } else {
       document.documentElement.classList.remove("dark");
     }
-  },
+  }
 };
 </script>
 

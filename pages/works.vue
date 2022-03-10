@@ -12,7 +12,7 @@
 <script>
 export default {
   head: {
-    title: "Contact - Isaac Tan | Portfolio",
+    title: "Works - Isaac Tan | Portfolio",
   },
 };
 </script>

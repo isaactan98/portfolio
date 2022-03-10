@@ -12,7 +12,7 @@
       rounded-lg
       text-sm
       p-2.5
-      shadow-md
+      shadow-lg
     "
   >
     <svg

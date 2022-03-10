@@ -61,5 +61,10 @@ export default {
         autoprefixer: {},
       },
     },
+  },
+  loading: {
+    color: "#2d2f35",
+    height: '3px',
+    throttle: 0 
   }
 }

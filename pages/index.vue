@@ -2,9 +2,9 @@
   <div
     class="
       h-[200vh]
-      bg-gradient-to-tr
-      from-indigo-100
-      dark:from-slate-800 dark:to-slate-500
+      bg-gradient-to-t
+      from-amber-100
+      dark:from-slate-900 dark:to-slate-600
     "
   >
   </div>
@@ -14,5 +14,10 @@
 export default {
   components: {  },
   name: "IndexPage",
+  watch: {
+    "$route.params.index": function(val) {
+      console.log(val);
+    }
+  }
 };
 </script>
