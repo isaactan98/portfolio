@@ -21,6 +21,6 @@ $ npm run start
 $ npm run generate
 ```
 
-# This project is to step my foot into Nuxt JS by building a portfolio with Vuesax UI Framework. 
+# This project is to step my foot into Nuxt JS by building a portfolio with TailwindCSS. 
 ## `Tools`
 ### Vue, Nuxt, TailwindCSS
