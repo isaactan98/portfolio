@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-white/30 dark:bg-gray-700/30 fixed w-full backdrop-blur-md">
+  <nav class="bg-white/30 dark:bg-gray-700/30 fixed w-full backdrop-blur-md z-[1]">
     <div
       class="w-full flex max-w-2xl p-2 justify-center inline-se"
       wrap="wrap"

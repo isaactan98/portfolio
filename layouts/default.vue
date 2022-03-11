@@ -1,19 +1,26 @@
 <template>
   <main>
     <Navbar />
-    <Nuxt class="scroll-smooth" />
-    <Bottonnav/>
+    <Nuxt class="scroll-smooth" data-scroll-container />
+    <Bottonnav />
   </main>
 </template>
 
 <script>
 import Navbar from "~/components/Navbar.vue";
 import Bottonnav from "~/components/Bottomnav.vue";
+
 export default {
+  data() {
+    return {
+      lmS: null,
+    };
+  },
   components: {
     Navbar,
-    Bottonnav
+    Bottonnav,
   },
+  
   mounted() {
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (
@@ -25,7 +32,15 @@ export default {
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }
+
+    this.lmS = new this.locomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+      tablet: { smooth: true },
+      smartphone: { smooth: true },
+    });
+
+  },
 };
 </script>
 

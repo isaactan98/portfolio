@@ -1,23 +1,22 @@
 <template>
   <div
+    data-scroll-section
     class="
-      h-[200vh]
       bg-gradient-to-t
       from-amber-100
       dark:from-slate-900 dark:to-slate-600
     "
   >
+    <div class="h-[100vh]" data-scroll-section></div>
+    <div class="h-[100vh]" data-scroll-section></div>
+    <div class="h-[100vh]" data-scroll-section></div>
   </div>
 </template>
 
 <script>
 export default {
-  components: {  },
-  name: "IndexPage",
-  watch: {
-    "$route.params.index": function(val) {
-      console.log(val);
-    }
-  }
+  components: {},
+
+  mounted() {},
 };
 </script>

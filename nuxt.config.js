@@ -20,6 +20,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {
+      src: "~/plugins/locomotiveScroll.js",
+      mode: "client"
+    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -50,6 +54,9 @@ export default {
       lang: 'en',
       name: 'Isaac Tan Portfolio',
       short_name: 'Isaac`s Portfolio',
+    },
+    icon: {
+      source: "@/static/favicon.ico"
     }
   },
 
@@ -65,6 +72,6 @@ export default {
   loading: {
     color: "#2d2f35",
     height: '3px',
-    throttle: 0 
+    throttle: 0
   }
 }
