@@ -23,6 +23,10 @@ export default {
     {
       src: "~/plugins/locomotiveScroll.js",
       mode: "client"
+    }, 
+    {
+      src: "~/plugins/firebase.js",
+      mode: "client"
     }
   ],
 

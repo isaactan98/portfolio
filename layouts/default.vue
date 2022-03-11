@@ -1,7 +1,7 @@
 <template>
   <main>
     <Navbar />
-    <Nuxt class="scroll-smooth" data-scroll-container />
+    <Nuxt data-scroll-container />
     <Bottonnav />
   </main>
 </template>
