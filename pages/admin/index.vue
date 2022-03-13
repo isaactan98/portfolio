@@ -7,8 +7,11 @@
       dark:from-slate-800 dark:to-slate-600
     "
   >
-    <div class="absolute mt-[4rem] w-full" data-scroll-section>
-      <h1 class="font-bold text-slate-700">Admin Page</h1>
+    <div v-if="fetching" class="absolute mt-[4rem] w-full">
+      <h1>Loading...</h1>
+    </div>
+    <div v-else class="absolute mt-[4rem] w-full" data-scroll-section>
+      <h1 class="font-bold text-slate-700 dark:text-white">Admin Page</h1>
     </div>
   </div>
 </template>
@@ -20,19 +23,29 @@ export default {
   head: {
     title: "Admin - Isaac Tan | Portfolio",
   },
-  // middleware({ redirect }) {
-  //   firebase.auth().onAuthStateChanged((user) => {
-  //     if (!user) {
-  //       return redirect({ name: "admin-login" });
-  //     }
-  //   });
-  // },
+  data() {
+    return {
+      authUser: null,
+      fetching: false,
+    };
+  },
+  // middleware: "firebase-auth"
   mounted() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (!user) {
-        this.$router.push({ name: "admin-login" });
-      }
-    });
+    this.checkAuth();
+  },
+  methods: {
+    checkAuth() {
+      this.fetching = true;
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          this.fetching = false;
+          this.authUser = user;
+        } else {
+          this.fetching = false;
+          this.$router.push({ name: "admin-login" });
+        }
+      });
+    },
   },
 };
 </script>

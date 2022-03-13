@@ -1,5 +1,13 @@
 <template>
-  <main>
+  <main
+    class="
+      relative
+      grid
+      bg-gradient-to-t
+      from-amber-100
+      dark:from-slate-900 dark:to-slate-700
+    "
+  >
     <Navbar />
     <Nuxt data-scroll-container />
     <Bottonnav />
@@ -20,7 +28,7 @@ export default {
     Navbar,
     Bottonnav,
   },
-  
+
   mounted() {
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (
@@ -33,14 +41,19 @@ export default {
       document.documentElement.classList.remove("dark");
     }
 
-    this.lmS = new this.locomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true,
-      tablet: { smooth: true },
-      smartphone: { smooth: true },
-    });
-
+    this.locomotiveScrollInit();
   },
+  methods: {
+    locomotiveScrollInit() {
+      this.scroll = new this.$LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: true,
+        getDirection: true,
+      });
+    },
+  },
+
+  transition: "slide-bottom",
 };
 </script>
 

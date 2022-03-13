@@ -15,7 +15,9 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/css/main.css',
+    '~/assets/css/main.css',
+    '~/assets/css/transition.css',
+    '~/assets/css/locomotive.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -77,5 +79,6 @@ export default {
     color: "#2d2f35",
     height: '3px',
     throttle: 0
-  }
+  },
+  pageTransition: "page"
 }

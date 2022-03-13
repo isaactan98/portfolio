@@ -10,7 +10,9 @@
     <div class="absolute mt-[4rem] w-full" data-scroll-section>
       <div
         class="
-          w-1/2
+          w-3/4
+          sm:w-1/2
+          lg:w-1/3
           mx-auto
           p-10
           mt-10
@@ -194,14 +196,14 @@ export default {
       this.error = false;
       firebase
         .auth()
-        .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+        .setPersistence("local")
         .then(() => {
           firebase
             .auth()
             .signInWithEmailAndPassword(this.email, this.password)
             .then(() => {
-              this.$router.push({ name: "admin" });
               this.loading = false;
+              this.$router.push({ name: "admin" });
             })
             .catch((er) => {
               console.log(er);
@@ -222,6 +224,7 @@ export default {
       }
     });
   },
+  // middleware: "firebase-auth",
 };
 </script>
 

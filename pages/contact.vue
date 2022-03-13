@@ -1,5 +1,5 @@
 <template>
-  <div data-scroll-section
+  <div
     class="
       bg-gradient-to-t
       from-amber-100

@@ -15,3 +15,7 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
+export function init_firebase() {
+    return firebase;
+}
