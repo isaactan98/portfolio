@@ -1,7 +1,7 @@
 <template>
   <nav
     class="bg-white/30 dark:bg-gray-700/30 fixed w-full z-[1]"
-    style="backdrop-filter: blur(12px)"
+    style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px)"
   >
     <div
       class="w-full flex max-w-2xl p-2 justify-center inline-se"
