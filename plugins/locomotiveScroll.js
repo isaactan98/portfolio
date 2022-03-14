@@ -1,5 +1,6 @@
-import LocomotiveScroll from 'locomotive-scroll'
+import Vue from "vue";
+import locomotiveScroll from "locomotive-scroll";
 
-export default ({ app }, inject) => {
-  inject('LocomotiveScroll', LocomotiveScroll)
-}
+Object.defineProperty(Vue.prototype, "locomotiveScroll", {
+  value: locomotiveScroll
+});

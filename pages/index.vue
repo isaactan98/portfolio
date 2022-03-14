@@ -30,7 +30,42 @@
 <script>
 export default {
   components: {},
+  data() {
+    return {
+      lmS: null,
+    };
+  },
 
-  mounted() {},
+  mounted() {
+    const e = document.querySelector("span.c-scrollbar");
+    if (e != null) {
+      e.parentElement.removeChild(e);
+    }
+
+    this.lmS = new this.locomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+      mobile: {
+        smooth: true,
+      },
+      tablet: {
+        smooth: true,
+      },
+    });
+  },
+  // methods: {
+  //   locomotiveScrollInit() {
+  //     this.scroll = new this.$LocomotiveScroll({
+  //       el: document.querySelector("[data-scroll-container]"),
+  //       smooth: true,
+  //       mobile: {
+  //         smooth: true,
+  //       },
+  //       tablet: {
+  //         smooth: true,
+  //       },
+  //     });
+  //   },
+  // },
 };
 </script>

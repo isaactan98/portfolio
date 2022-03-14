@@ -41,14 +41,13 @@ export default {
       document.documentElement.classList.remove("dark");
     }
 
-    this.locomotiveScrollInit();
+    // this.locomotiveScrollInit();
   },
   methods: {
     locomotiveScrollInit() {
-      this.scroll = new this.$LocomotiveScroll({
+      this.lmS = new this.locomotiveScroll({
         el: document.querySelector("[data-scroll-container]"),
         smooth: true,
-        getDirection: true,
         mobile: {
           smooth: true,
         },
