@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="bg-white/30 dark:bg-gray-700/30 fixed w-full z-[1]"
+    class="bg-white/30 dark:bg-zinc-900/10 fixed w-full z-[1]"
     style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px)"
   >
     <div
