@@ -40,12 +40,16 @@
             Work
           </h3>
           <p class="text-justify indent-4 dark:text-white">
-            Isaac Tan is a freelancer doing web development and designing, also
-            has a passion in photography. He is based in Malaysia, Johor Bahru
-            and now studying Computer Science Software Enginering at Universiti
-            Teknologi Malaysia. He will be graduating on the year of 2022. Do
-            check out the other portfolio on photography at
-            <a class="underline text-violet-500 cursor-pointer">
+            Isaac Tan is a freelancer doing web development and designing, and
+            also has a passion for photography. He is based in Johor Bahru,
+            Malaysia and currently pursuing a Bachelor's Degree in Computer
+            Science (Software Engineering) at Universiti Teknologi Malaysia
+            (UTM). He will be graduating in the year 2022. Do check out the
+            other portfolio on photography at
+            <a
+              class="underline text-violet-500 cursor-pointer"
+              id="adobe-portfolio"
+            >
               Adobe Portfolio </a
             >.
           </p>
@@ -86,6 +90,11 @@ export default {
       tablet: {
         smooth: true,
       },
+    });
+
+    let adobe_portfolio = document.getElementById("adobe-portfolio");
+    adobe_portfolio.addEventListener("click", () => {
+      window.location.href = "https://iztan98.myportfolio.com/photography";
     });
   },
   // methods: {
