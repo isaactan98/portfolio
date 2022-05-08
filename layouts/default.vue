@@ -9,7 +9,9 @@
     "
   >
     <Navbar />
-    <Nuxt data-scroll-container />
+    <div id="my-scrollbar" class="h-screen">
+      <HeroImg />
+    </div>
     <Bottonnav />
   </main>
 </template>
@@ -17,6 +19,8 @@
 <script>
 import Navbar from "~/components/Navbar.vue";
 import Bottonnav from "~/components/Bottomnav.vue";
+import HeroImg from "~/components/HeroImg.vue";
+import Scrollbar from "smooth-scrollbar";
 
 export default {
   data() {
@@ -27,6 +31,7 @@ export default {
   components: {
     Navbar,
     Bottonnav,
+    HeroImg,
   },
 
   mounted() {
@@ -42,20 +47,25 @@ export default {
     }
 
     // this.locomotiveScrollInit();
+    let scrollvar = Scrollbar.init(document.getElementById("my-scrollbar"), {
+      damping: 0.05,
+    });
+
+    console.log(scrollvar);
   },
   methods: {
-    locomotiveScrollInit() {
-      this.lmS = new this.locomotiveScroll({
-        el: document.querySelector("[data-scroll-container]"),
-        smooth: true,
-        mobile: {
-          smooth: true,
-        },
-        tablet: {
-          smooth: true,
-        },
-      });
-    },
+    // locomotiveScrollInit() {
+    //   this.lmS = new this.locomotiveScroll({
+    //     el: document.querySelector("[data-scroll-container]"),
+    //     smooth: true,
+    //     mobile: {
+    //       smooth: true,
+    //     },
+    //     tablet: {
+    //       smooth: true,
+    //     },
+    //   });
+    // },
   },
 
   transition: "slide-bottom",

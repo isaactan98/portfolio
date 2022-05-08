@@ -1,10 +1,7 @@
 <template>
   <div class="grid p-5 w-full sm:m-auto sm:max-w-3xl">
-    <div class="my-16 w-full grid gap-8" data-scroll-section>
-      <div class="mb-5" data-scroll>
-        <img src="~/assets/img/IMG_0094.jpeg" alt="" />
-      </div>
-      <div class="h-screen w-full" data-scroll>
+    <div class="my-16 w-full grid gap-8">
+      <div class="h-screen w-full" >
         <div
           class="
             bg-zinc-300/50
@@ -53,7 +50,7 @@
               class="underline text-violet-500 cursor-pointer"
               id="adobe-portfolio"
             >
-              Adobe Portfolio </a
+              Adobe Portfolio</a
             >.
           </p>
           <div align="center" class="css-1v7r4tf"></div>
@@ -95,7 +92,7 @@
           <div></div>
         </div>
       </div>
-      <div class="my-10 text-center dark:text-zinc-600" data-scroll="">
+      <div class="mt-10 sm:my-10 text-center dark:text-zinc-600">
         @ <span id="get_year"></span> Isaac Tan. All Right Reserved.
       </div>
     </div>
@@ -117,16 +114,16 @@ export default {
       e.parentElement.removeChild(e);
     }
 
-    this.lmS = new this.locomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true,
-      mobile: {
-        smooth: true,
-      },
-      tablet: {
-        smooth: true,
-      },
-    });
+    // this.lmS = new this.locomotiveScroll({
+    //   el: document.querySelector("[data-scroll-container]"),
+    //   smooth: true,
+    //   mobile: {
+    //     smooth: true,
+    //   },
+    //   tablet: {
+    //     smooth: true,
+    //   },
+    // });
 
     let adobe_portfolio = document.getElementById("adobe-portfolio");
     adobe_portfolio.addEventListener("click", () => {

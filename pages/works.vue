@@ -1,15 +1,6 @@
 <template>
-  <div
-    class="
-      grid
-      p-2
-      sm:m-auto sm:w-2/3
-      bg-gradient-to-t
-      from-amber-100
-      dark:from-slate-900 dark:to-slate-600
-    "
-  >
-    <div data-scroll-section></div>
+  <div class="grid p-2 sm:m-auto sm:w-2/3">
+    <div class="min-h-screen" ></div>
   </div>
 </template>
 
@@ -24,16 +15,16 @@ export default {
       e.parentElement.removeChild(e);
     }
 
-    this.lmS = new this.locomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true,
-      mobile: {
-        smooth: true,
-      },
-      tablet: {
-        smooth: true,
-      },
-    });
+    // this.lmS = new this.locomotiveScroll({
+    //   el: document.querySelector("[data-scroll-container]"),
+    //   smooth: true,
+    //   mobile: {
+    //     smooth: true,
+    //   },
+    //   tablet: {
+    //     smooth: true,
+    //   },
+    // });
   },
   // methods: {
   //   locomotiveScrollInit() {
