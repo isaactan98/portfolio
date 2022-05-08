@@ -1,7 +1,7 @@
 <template>
   <div class="grid p-5 w-full sm:m-auto sm:max-w-3xl">
     <div class="mb-16 sm:m-0 w-full grid gap-8">
-      <div class="h-screen w-full" >
+      <div class="h-screen w-full">
         <div
           class="
             bg-zinc-300/50
@@ -15,7 +15,7 @@
         >
           >_ Hello, I'm Isaac Tan here_
         </div>
-        <div class="flex mt-6">
+        <div class="sm:flex mt-6">
           <div class="grow">
             <h2 class="text-4xl leading-5 dark:text-white mb-6">
               Isaac Tan Yu Hao
@@ -24,7 +24,32 @@
               Freelancer in Web Development & Photography
             </p>
           </div>
-          <div></div>
+          <div
+            class="
+              mt-4
+              flex-shrink-0 flex
+              justify-center
+              sm:block sm:mt-0 sm:ml-6
+            "
+          >
+            <div
+              class="
+                w-[100px]
+                h-[100px]
+                inline-block
+                overflow-hidden
+                rounded-full
+                border-white border-2 border-solid
+                relative
+              "
+            >
+              <img
+                src="~/assets/img/IMG_0023-p.png"
+                alt=""
+                class="absolute -top-4"
+              />
+            </div>
+          </div>
         </div>
         <div class="mb-6" style="opacity: 1; transform: none">
           <h3
@@ -130,7 +155,7 @@ export default {
       window.open("https://iztan98.myportfolio.com/photography", "_blank");
     });
 
-    const get_year = document.getElementById('get_year');
+    const get_year = document.getElementById("get_year");
     get_year.innerHTML = new Date().getFullYear();
   },
   // methods: {
