@@ -1,6 +1,6 @@
 <template>
   <div class="grid p-5 w-full sm:m-auto sm:max-w-3xl">
-    <div class="my-16 w-full grid gap-8">
+    <div class="mb-16 sm:m-0 w-full grid gap-8">
       <div class="h-screen w-full" >
         <div
           class="
