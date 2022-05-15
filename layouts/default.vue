@@ -9,7 +9,7 @@
     "
   >
     <Navbar />
-    <div id="my-scrollbar" class="h-screen">
+    <div id="my-scrollbar" class="sm:h-screen">
       <HeroImg />
     </div>
     <Bottonnav />
@@ -47,11 +47,11 @@ export default {
     }
 
     // this.locomotiveScrollInit();
-    let scrollvar = Scrollbar.init(document.getElementById("my-scrollbar"), {
-      damping: 0.05,
-    });
-
-    console.log(scrollvar);
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      let scrollvar = Scrollbar.init(document.getElementById("my-scrollbar"), {
+        damping: 0.05,
+      });
+    }
   },
   methods: {
     // locomotiveScrollInit() {
