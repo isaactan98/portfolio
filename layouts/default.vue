@@ -9,7 +9,7 @@
     "
   >
     <Navbar />
-    <div id="my-scrollbar" class="sm:h-screen">
+    <div id="my-scrollbar" class="lg:h-screen">
       <HeroImg />
     </div>
     <Bottonnav />
