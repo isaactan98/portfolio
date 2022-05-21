@@ -45,6 +45,7 @@
 <script>
 export default {
   mounted() {
+    localStorage.setItem("tcvDarkMode", "false");
     var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
     var themeToggleLightIcon = document.getElementById(
       "theme-toggle-light-icon"
@@ -80,6 +81,7 @@ export default {
 
         // if NOT set via local storage previously
       } else {
+        localStorage.setItem("tcvDarkMode", "false");
         if (document.documentElement.classList.contains("dark")) {
           document.documentElement.classList.remove("dark");
           localStorage.setItem("tcvDarkMode", "false");
