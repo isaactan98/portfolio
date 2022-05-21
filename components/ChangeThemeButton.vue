@@ -45,7 +45,6 @@
 <script>
 export default {
   mounted() {
-    localStorage.setItem("tcvDarkMode", "false");
     var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
     var themeToggleLightIcon = document.getElementById(
       "theme-toggle-light-icon"
@@ -61,10 +60,29 @@ export default {
       themeToggleDarkIcon.classList.remove("hidden");
     }
 
+    if (localStorage.getItem("tcvDarkMode")) {
+      if (localStorage.getItem("tcvDarkMode") === "true") {
+        document.documentElement.classList.add("dark");
+        themeToggleLightIcon.classList.remove("hidden");
+        themeToggleDarkIcon.classList.add("hidden");
+      } else {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("tcvDarkMode", "false");
+        themeToggleLightIcon.classList.add("hidden");
+        themeToggleDarkIcon.classList.remove("hidden");
+      }
+
+      // if NOT set via local storage previously
+    } else {
+      localStorage.setItem("tcvDarkMode", "false");
+      themeToggleLightIcon.classList.add("hidden");
+      themeToggleDarkIcon.classList.remove("hidden");
+    }
+
     var themeToggleBtn = document.getElementById("theme-toggle");
 
     themeToggleBtn.addEventListener("click", function () {
-      console.log("clicked");
+
       // toggle icons inside button
       themeToggleDarkIcon.classList.toggle("hidden");
       themeToggleLightIcon.classList.toggle("hidden");
@@ -95,4 +113,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>
