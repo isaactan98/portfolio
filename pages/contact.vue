@@ -11,7 +11,7 @@
               name="title"
               type="text"
               class="w-2/3 bg-transparent outline-none dark:text-white"
-              placeholder="Click here to enter." autofocus autocomplete="off"
+              placeholder="Enter title here." autofocus autocomplete="off"
             /></code></pre>
           <pre data-prefix="2" class="my-2"><code><input
               id="email"
