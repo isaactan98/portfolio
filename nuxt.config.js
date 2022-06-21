@@ -1,3 +1,4 @@
+require('dotenv').config()
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -75,5 +76,10 @@ export default {
     height: '3px',
     throttle: 0
   },
-  pageTransition: "page"
+  pageTransition: "page",
+  env: {
+    EMAIL_JS_SERVICE_ID: process.env.EMAIL_JS_SERVICE_ID,
+    EMAIL_JS_TEMPLATE_ID: process.env.EMAIL_JS_TEMPLATE_ID,
+    EMAIL_JS_PUBLIC_KEY: process.env.EMAIL_JS_PUBLIC_KEY
+  }
 }

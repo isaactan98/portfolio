@@ -1,6 +1,9 @@
 <template>
-  <div class=" bottom-0 inset-x-0 fixed sm:hidden">
-    <div class="bg-white/30 dark:bg-gray-700/30 w-full backdrop-blur-md">
+  <div class="bottom-0 inset-x-0 fixed sm:hidden">
+    <div
+      class="bg-white/30 dark:bg-gray-700/30 w-full backdrop-blur-md"
+      style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px)"
+    >
       <div
         class="w-full flex max-w-2xl p-2 justify-center inline-se"
         wrap="wrap"
