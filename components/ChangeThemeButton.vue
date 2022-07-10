@@ -17,7 +17,7 @@
   >
     <svg
       id="theme-toggle-dark-icon"
-      class="hidden w-5 h-5"
+      class="hidden w-5 h-5 animate-fade"
       fill="currentColor"
       viewBox="0 0 20 20"
       xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@
     </svg>
     <svg
       id="theme-toggle-light-icon"
-      class="hidden w-5 h-5 text-yellow-300"
+      class="hidden w-5 h-5 text-yellow-300 animate-fade"
       fill="currentColor"
       viewBox="0 0 20 20"
       xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,6 @@ export default {
     var themeToggleBtn = document.getElementById("theme-toggle");
 
     themeToggleBtn.addEventListener("click", function () {
-
       // toggle icons inside button
       themeToggleDarkIcon.classList.toggle("hidden");
       themeToggleLightIcon.classList.toggle("hidden");
