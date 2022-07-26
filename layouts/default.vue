@@ -1,15 +1,13 @@
 <template>
-  <main
-    class="
+  <main class="
       relative
-      grid
+      sm:grid
       bg-gradient-to-t
       from-amber-100
       dark:from-zinc-900 dark:to-zinc-800
-    "
-  >
+    ">
     <Navbar />
-    <div id="my-scrollbar" class="lg:h-screen">
+    <div>
       <HeroImg />
     </div>
     <Bottonnav />
@@ -20,7 +18,6 @@
 import Navbar from "~/components/Navbar.vue";
 import Bottonnav from "~/components/Bottomnav.vue";
 import HeroImg from "~/components/HeroImg.vue";
-import Scrollbar from "smooth-scrollbar";
 
 export default {
   data() {
@@ -46,12 +43,6 @@ export default {
       document.documentElement.classList.remove("dark");
     }
 
-    // this.locomotiveScrollInit();
-    if (window.matchMedia("(min-width: 1024px)").matches) {
-      let scrollvar = Scrollbar.init(document.getElementById("my-scrollbar"), {
-        damping: 0.05,
-      });
-    }
   },
   methods: {
     // locomotiveScrollInit() {

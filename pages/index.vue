@@ -1,7 +1,7 @@
 <template>
   <div class="grid p-5 w-full sm:m-auto sm:max-w-3xl">
     <div class="mb-16 sm:m-0 w-full grid gap-8">
-      <div class="h-screen w-full">
+      <div class="min-h-full w-full">
         <div
           class="
             bg-zinc-300/50
@@ -134,21 +134,6 @@ export default {
   },
 
   mounted() {
-    const e = document.querySelector("span.c-scrollbar");
-    if (e != null) {
-      e.parentElement.removeChild(e);
-    }
-
-    // this.lmS = new this.locomotiveScroll({
-    //   el: document.querySelector("[data-scroll-container]"),
-    //   smooth: true,
-    //   mobile: {
-    //     smooth: true,
-    //   },
-    //   tablet: {
-    //     smooth: true,
-    //   },
-    // });
 
     let adobe_portfolio = document.getElementById("adobe-portfolio");
     adobe_portfolio.addEventListener("click", () => {

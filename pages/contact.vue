@@ -61,10 +61,6 @@ export default {
     };
   },
   mounted() {
-    const e = document.querySelector("span.c-scrollbar");
-    if (e != null) {
-      e.parentElement.removeChild(e);
-    }
     const show_msg = document.getElementById("show_msg");
     show_msg.classList.add("hidden");
   },
