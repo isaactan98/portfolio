@@ -7,7 +7,7 @@
 
       <div class="grid gap-4 grid-cols-1 sm:grid-cols-2" v-if="loading == true">
 
-        <div class="card bg-gray-100 shadow-xl" v-for="x in 6" :key="x">
+        <div class="card bg-gray-100 shadow-xl h-40" v-for="x in 10" :key="x">
           <div class="card-body bg-zinc-500 animate-pulse">
             <div class="card-actions justify-end"></div>
           </div>
@@ -21,11 +21,9 @@
           <div class="card-body">
             <h2 class="card-title">{{ x.name }}</h2>
             <p>{{ x.description ?? 'No Description' }}</p>
-            <div class="card-actions justify-end">
-              <a :href="x.html_url" target="_blank" class="btn btn-sm btn-primary">View Repo</a>
-            </div>
-            <div class="card-actions">
+            <div class="card-actions justify-between mt-3">
               <span class="badge badge-primary">{{ x.language }}</span>
+              <a :href="x.html_url" target="_blank" class="btn btn-sm btn-primary">View Repo</a>
             </div>
           </div>
         </div>
@@ -58,7 +56,6 @@ export default {
             this.repo.push(element);
           }
         });
-        console.log(this.repo);
       }).catch(e => console.log(e));
   },
 };
