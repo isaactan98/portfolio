@@ -117,9 +117,6 @@
           <div></div>
         </div>
       </div>
-      <div class="mt-10 sm:my-10 text-center dark:text-zinc-600">
-        @ <span id="get_year"></span> Isaac Tan. All Right Reserved.
-      </div>
     </div>
   </div>
 </template>

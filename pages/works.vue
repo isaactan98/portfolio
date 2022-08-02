@@ -21,7 +21,7 @@
           <div class="card-body">
             <h2 class="card-title">{{ x.name }}</h2>
             <p>{{ x.description ?? 'No Description' }}</p>
-            <div class="card-actions justify-between mt-3">
+            <div class="card-actions justify-between items-center mt-3">
               <span class="badge badge-primary">{{ x.language }}</span>
               <a :href="x.html_url" target="_blank" class="btn btn-sm btn-primary">View Repo</a>
             </div>
@@ -47,9 +47,17 @@ export default {
   mounted() {
     const url = "https://api.github.com/users/isaactan98/repos";
 
+    const sortByDate = arr => {
+      const sorter = (a, b) => {
+        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+      }
+      arr.sort(sorter);
+    };
+
     fetch(url)
       .then(response => response.json())
       .then(data => {
+        sortByDate(data)
         data.forEach(element => {
           this.loading = false;
           if (element.private == false) {
