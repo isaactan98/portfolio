@@ -3,7 +3,6 @@
       relative
       sm:grid
       bg-gradient-to-t
-      from-amber-100
       dark:from-zinc-900 dark:to-zinc-800
     ">
     <Navbar />

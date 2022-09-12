@@ -1,6 +1,6 @@
 <template>
   <div class="grid p-5 sm:m-auto">
-    <div class="min-h-screen">
+    <div class="">
       <div class="text-zinc-800 dark:text-white font-bold text-2xl">
         Contact Me
       </div>
