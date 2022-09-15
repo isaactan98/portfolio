@@ -1,9 +1,11 @@
 <template>
   <main class="
+      transition-colors
+      duration-300
       relative
       sm:grid
-      bg-gradient-to-t
-      dark:from-zinc-900 dark:to-zinc-800
+      bg-zinc-100
+      dark:bg-zinc-800
     ">
     <Navbar />
     <div>
@@ -66,4 +68,5 @@ export default {
 </script>
 
 <style>
+
 </style>

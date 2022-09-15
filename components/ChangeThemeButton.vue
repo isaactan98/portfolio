@@ -3,10 +3,12 @@
     id="theme-toggle"
     type="button"
     class="
+      transition-colors
+      duration-300
       text-gray-500
       dark:text-gray-400
-      hover:bg-gray-100
-      dark:hover:bg-gray-700
+      bg-gray-100
+      dark:bg-zinc-700
       focus:outline-none
       rounded-lg
       text-sm
