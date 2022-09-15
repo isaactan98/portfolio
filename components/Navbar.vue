@@ -98,14 +98,18 @@ export default {
   mounted() {
     this.route = this.$route.path
     const a_tag = document.querySelector("a[href='" + this.route + "']");
-    a_tag.classList.add("underline");
+    if (this.route != "/") {
+      a_tag.classList.add("underline");
+    }
     const all_a = document.querySelectorAll("a");
     all_a.forEach((a) => {
       a.addEventListener("click", () => {
         all_a.forEach((a) => {
           a.classList.remove("underline");
         });
-        a.classList.add("underline");
+        if (this.route != "/") {
+          a.classList.add("underline");
+        }
       });
     });
   },
