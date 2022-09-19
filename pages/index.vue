@@ -2,15 +2,17 @@
   <div class="grid p-5 w-full sm:m-auto sm:max-w-3xl">
     <div class="mb-16 sm:m-0 w-full grid gap-8">
       <div class="min-h-full w-full">
-        <div class="
-            bg-zinc-300/50
-            dark:bg-zinc-500/50
+        <div
+          class="
+            bg-zinc-500/50
+            dark:bg-black
             backdrop-blur
             text-center
             p-3
             rounded-lg
             dark:text-white
-          ">
+          "
+        >
           >_ Hello, I'm Isaac Tan here_
         </div>
         <div class="sm:flex mt-6">
@@ -22,13 +24,16 @@
               Freelancer in Web Development & Photography
             </p>
           </div>
-          <div class="
+          <div
+            class="
               mt-4
               flex-shrink-0 flex
               justify-center
               sm:block sm:mt-0 sm:ml-6
-            ">
-            <div class="
+            "
+          >
+            <div
+              class="
                 w-[100px]
                 h-[100px]
                 inline-block
@@ -36,42 +41,53 @@
                 rounded-full
                 border-white border-2 border-solid
                 relative
-              ">
-              <img src="~/assets/img/IMG_0023-p.png" alt="" class="absolute -top-4" />
+              "
+            >
+              <img
+                src="~/assets/img/IMG_0023-p.png"
+                alt=""
+                class="absolute -top-4"
+              />
             </div>
           </div>
         </div>
-        <div class="mb-6" style="opacity: 1; transform: none">
-          <h3 class="
+
+        <div class="mb-12" style="opacity: 1; transform: none">
+          <h3
+            class="
               leading-5
               text-2xl
               my-5
               underline underline-offset-4
               decoration-4
               dark:text-white
-            ">
+            "
+          >
             About Me
           </h3>
           <div v-if="aboutMe != null">
-            <p class="text-justify indent-4 dark:text-white"
-              v-html="aboutMe.fields.aboutMe.content[0].content[0].value">
-            </p>
+            <p
+              class="text-justify indent-4 dark:text-white"
+              v-html="aboutMe.fields.aboutMe.content[0].content[0].value"
+            ></p>
           </div>
-          <div class="min-h-[30vh] w-full border-none dark:text-white btn loading" v-else>
-
-          </div>
-          <div align="center" class="css-1v7r4tf"></div>
+          <div
+            class="min-h-[30vh] w-full border-none dark:text-white btn loading"
+            v-else
+          ></div>
         </div>
-        <div class="mb-6" style="opacity: 1; transform: none">
-          <h3 class="
+
+        <div class="mb-12" style="opacity: 1; transform: none">
+          <h3
+            class="
               leading-5
-              text-2xl
-              text-justify
+              text-2xl text-justify
               my-5
               underline underline-offset-4
               decoration-4
               dark:text-white
-            ">
+            "
+          >
             Bio
           </h3>
           <div class="pl-14 -indent-14 dark:text-white">
@@ -95,15 +111,48 @@
             <span class="font-bold mr-4">2022</span>
             Studying Computer Science in Software Engineering at UTM
           </div>
-          <div></div>
         </div>
+        <!--  -->
+        <div class="mb-12">
+          <h3
+            class="
+              leading-5
+              text-2xl
+              my-5
+              underline underline-offset-4
+              decoration-4
+              dark:text-white
+            "
+          >
+            Tech Stack
+          </h3>
+          <div v-if="techStack != null" class="">
+            <div v-for="(a, k) in techStack" :key="k" class="mb-4">
+              <div
+                class="flex"
+                :class="a.type == 'language' ? 'justify-start' : 'justify-end'"
+              >
+                <div class="flex">
+                  <div class="mr-4">
+                    <img :src="a.icon" class="w-10 h-10" />
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <div class="font-bold dark:text-white">{{ a.name }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div v-else class="min-h-[30vh] min-w-full btn loading"></div>
+        </div>
+        <!--  -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-var contentful = require('contentful')
+var contentful = require("contentful");
 
 var client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -116,34 +165,18 @@ export default {
     return {
       lmS: null,
       aboutMe: null,
+      techStack: null,
     };
   },
 
   mounted() {
-
     client.getEntry(process.env.CONTENTFUL_ENTRY_ID).then((entry) => {
-      // // logs the entry metadata
-      // console.log(entry.sys);
-
-      // // logs the field with ID title
-      // console.log(entry.fields.aboutMe);
       this.aboutMe = entry;
+    });
 
+    client.getEntry("56ZOVSw8Spo7dvYSGMYlsp").then((entry) => {
+      this.techStack = entry.fields.techStack.stack;
     });
   },
-  // methods: {
-  //   locomotiveScrollInit() {
-  //     this.scroll = new this.$LocomotiveScroll({
-  //       el: document.querySelector("[data-scroll-container]"),
-  //       smooth: true,
-  //       mobile: {
-  //         smooth: true,
-  //       },
-  //       tablet: {
-  //         smooth: true,
-  //       },
-  //     });
-  //   },
-  // },
 };
 </script>
