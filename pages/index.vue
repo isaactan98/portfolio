@@ -136,9 +136,6 @@ export default {
     adobe_portfolio.addEventListener("click", () => {
       window.open("https://iztan98.myportfolio.com/photography", "_blank");
     });
-
-    const get_year = document.getElementById("get_year");
-    get_year.innerHTML = new Date().getFullYear();
   },
   // methods: {
   //   locomotiveScrollInit() {

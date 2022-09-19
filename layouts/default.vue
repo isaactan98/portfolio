@@ -47,6 +47,9 @@ export default {
       document.documentElement.classList.remove("dark");
     }
 
+    const get_year = document.getElementById("get_year");
+    get_year.innerHTML = new Date().getFullYear();
+
   },
   methods: {
     // locomotiveScrollInit() {
