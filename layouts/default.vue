@@ -11,7 +11,7 @@
     <div>
       <HeroImg />
     </div>
-    <div class="pb-20 sm:my-10 sm:pb-0 text-center dark:text-zinc-600">
+    <div class="pb-20 sm:my-10 sm:pb-0 text-center dark:text-zinc-300">
       @ <span id="get_year"></span> Isaac Tan. All Right Reserved.
     </div>
     <Bottonnav />

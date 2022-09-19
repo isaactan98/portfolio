@@ -2,7 +2,7 @@
   <div class="grid p-5 w-full sm:m-auto sm:max-w-3xl">
     <div class="min-h-screen">
       <div class="flex mb-4">
-        <h1 class="dark:text-gray-300 text-3xl">Github Repo</h1>
+        <h1 class="dark:text-gray-300 text-3xl font-bold">Github Repo</h1>
       </div>
 
       <div class="grid gap-4 grid-cols-1 sm:grid-cols-2" v-if="loading == true">
@@ -17,13 +17,13 @@
 
       <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 mb-10 sm:mb-0" v-else>
 
-        <div class="card dark:bg-gray-100 shadow-xl" v-for="x, key in repo" :key="key">
+        <div class="card border border-black dark:border-white" v-for="x, key in repo" :key="key">
           <div class="card-body">
-            <h2 class="card-title">{{ x.name }}</h2>
-            <p>{{ x.description ?? 'No Description' }}</p>
+            <h2 class="card-title dark:text-white underline">{{ x.name }}</h2>
+            <p class="dark:text-white">{{ x.description ?? 'No Description' }}</p>
             <div class="card-actions justify-between items-center mt-3">
-              <span class="badge badge-primary">{{ x.language }}</span>
-              <a :href="x.html_url" target="_blank" class="btn btn-sm btn-primary">View Repo</a>
+              <span class="badge badge-primary dark:text-white">{{ x.language }}</span>
+              <a :href="x.html_url" target="_blank" class="btn btn-sm btn-primary dark:text-white">View Repo</a>
             </div>
           </div>
         </div>
@@ -70,4 +70,5 @@ export default {
 </script>
 
 <style>
+
 </style>

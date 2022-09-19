@@ -12,6 +12,7 @@
     "@emailjs/browser": "^3.6.2",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
+    "contentful": "^9.2.4",
     "core-js": "^3.19.3",
     "daisyui": "^2.15.4",
     "dotenv": "^16.0.1",
