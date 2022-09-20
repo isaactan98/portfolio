@@ -154,7 +154,6 @@
                 top-0
                 left-1/2
                 md:left-1/3
-                h-1/2
               "
               id="lang_section"
             >
