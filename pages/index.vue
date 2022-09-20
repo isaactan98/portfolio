@@ -43,9 +43,9 @@
                 relative
               "
             >
-              <img
-                src="~/assets/img/IMG_0023-p.png"
-                alt=""
+              <nuxt-img
+                src="/me.png"
+                alt="Me"
                 class="absolute -top-4"
               />
             </div>
@@ -369,7 +369,7 @@ export default {
 .stacks-r {
   opacity: 0;
   transform: translateX(-50px);
-  transition: all 1s ease-in-out 0.5s;
+  transition: all 1s ease-in-out 0.25s;
 }
 
 .show {
