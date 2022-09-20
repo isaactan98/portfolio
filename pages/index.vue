@@ -138,7 +138,7 @@
               >
                 <div class="flex">
                   <div class="mr-4">
-                    <img :src="a.icon" class="w-10 h-10" />
+                    <img :src="a.icon" class="w-10 h-10" :alt="a.name" />
                   </div>
                   <div class="flex flex-col justify-center">
                     <div class="font-bold dark:text-white">{{ a.name }}</div>

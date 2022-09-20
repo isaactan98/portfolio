@@ -7,7 +7,9 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'This is a portfolio for Isaac Tan, including Recent Work, About, and Contact Page.' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'robots', content: 'noindex, follow' },
+      { name: 'theme-color', content: '#27272a' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -58,7 +60,7 @@ export default {
       short_name: 'Isaac`s Portfolio',
     },
     icon: {
-      source: "@/static/favicon.ico"
+      source: "@/static/logo-border.png"
     }
   },
 
