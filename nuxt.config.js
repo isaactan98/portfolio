@@ -65,6 +65,13 @@ export default {
       orientation: 'portrait',
       start_url: '/',
       scope: '/',
+      icons: [
+        {
+          src: '/icon.png',
+          sizes: '512x512',
+          type: 'image/png'
+        }
+      ]
     },
     meta: {
       name: 'Isaac Tan Portfolio',

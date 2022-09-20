@@ -70,8 +70,8 @@ export default {
       route: null,
       nav: [
         {
-          name: "Works",
-          path: "/works"
+          name: "Project",
+          path: "/project"
         },
         {
           name: "Contact",

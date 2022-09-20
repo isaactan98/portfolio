@@ -19,8 +19,8 @@
               underline-offset-4
               text-gray-700
             "
-            to="/works"
-            >Works</nuxt-link
+            to="/project"
+            >Project</nuxt-link
           >
           <nuxt-link
             no-prefetch
