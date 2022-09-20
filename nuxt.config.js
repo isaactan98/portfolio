@@ -67,7 +67,7 @@ export default {
       scope: '/',
       icons: [
         {
-          src: '/logo-border.png',
+          src: '/icon.png',
           sizes: '512x512',
           type: 'image/png'
         }
