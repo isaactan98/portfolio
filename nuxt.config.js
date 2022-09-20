@@ -65,13 +65,16 @@ export default {
       orientation: 'portrait',
       start_url: '/',
       scope: '/',
-      icons: [
-        {
-          src: '/icon.png',
-          sizes: '512x512',
-          type: 'image/png'
-        }
-      ]
+    },
+    meta: {
+      name: 'Isaac Tan Portfolio',
+      description: 'This is a portfolio for Isaac Tan, including Recent Work, About, and Contact Page.',
+      theme_color: '#27272a',
+      ogHost: 'https://portfolio-isaactan98.vercel.app',
+      ogImage: '/img/bg-image.jpeg',
+    },
+    icon: {
+      fileName: 'icon.png',
     },
   },
 
