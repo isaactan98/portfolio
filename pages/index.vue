@@ -334,7 +334,7 @@ export default {
         second_section.style.top = `${
           (this.counter.lang / (this.counter.lang + this.counter.framework)) *
             100 -
-          0.25
+          0.3
         }%`;
 
         const obs = new IntersectionObserver((entries) => {
