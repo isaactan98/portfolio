@@ -183,7 +183,7 @@
                 left-1/2
                 md:left-1/3 md:border-b-2
                 border-l-2 border-zinc-500
-                md:rounded-bl-3xl
+                md:rounded-bl-full
               "
               id="first_section"
             ></div>
@@ -197,7 +197,7 @@
                 left-1/2
                 md:right-1/3 md:border-t-2
                 border-r-2 border-zinc-500
-                md:rounded-tr-3xl
+                md:rounded-tr-full
               "
               id="second_section"
             ></div>
@@ -348,7 +348,7 @@ export default {
 .stacks-r {
   opacity: 0;
   transform: translateX(-50px);
-  transition: all 0.5s ease-in-out 0.5s;
+  transition: all 1s ease-in-out 0.5s;
 }
 
 .show {
