@@ -129,9 +129,11 @@
           <div v-if="techStack != null" class="relative">
             <div v-for="(a, k) in techStack" :key="k" class="mb-4">
               <div
-                class="flex"
+                class="flex stacks"
                 :class="
-                  a.type == 'language' ? 'justify-start' : 'justify-end mt-4'
+                  a.type == 'language'
+                    ? 'justify-start stacks-l'
+                    : 'justify-end mt-4 stacks-r'
                 "
               >
                 <div class="flex">
@@ -148,7 +150,7 @@
             <div
               class="
                 absolute
-                border border-zinc-500
+                border-l-2 border-zinc-500
                 top-0
                 left-1/2
                 md:left-1/3
@@ -157,7 +159,15 @@
               id="lang_section"
             >
               <div
-                class="absolute top-1/2 ml-8 dark:text-white text-2xl font-bold"
+                class="
+                  absolute
+                  animate-pulse
+                  top-1/2
+                  ml-8
+                  dark:text-white
+                  text-2xl
+                  font-bold
+                "
               >
                 Language
               </div>
@@ -195,12 +205,7 @@
             <div
               class="
                 absolute
-                border-r-zinc-500
-                border-l-0
-                border-spacing-1
-                border-2
-                border-t-0
-                border-b-0
+                border-r-zinc-500 border-r-2
                 left-1/2
                 md:right-1/3
                 top-1/2
@@ -210,6 +215,7 @@
             >
               <div
                 class="
+                  animate-pulse
                   dark:text-white
                   text-2xl
                   font-bold
@@ -308,7 +314,46 @@ export default {
             100 -
           0.25
         }%`;
+
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            } else {
+              entry.target.classList.remove("show");
+            }
+          });
+        });
+
+        const qr = document.querySelectorAll(".stacks");
+        qr.forEach((a) => {
+          obs.observe(a);
+        });
       });
   },
 };
 </script>
+
+<style scoped>
+.stacks {
+  width: 50%;
+}
+
+.stacks-l {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.5s ease-in-out 0.5s;
+}
+
+.stacks-r {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.5s ease-in-out 0.5s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0px);
+  width: 100%;
+}
+</style>

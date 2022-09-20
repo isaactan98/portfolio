@@ -1,5 +1,5 @@
 <template>
-  <div class="bottom-0 inset-x-0 fixed sm:hidden">
+  <div class="bottom-0 w-full fixed sm:hidden">
     <div
       class="bg-white/30 dark:bg-gray-700/30 w-full backdrop-blur-md"
       style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px)"
