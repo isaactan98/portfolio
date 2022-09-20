@@ -13,7 +13,7 @@
             dark:text-white
           "
         >
-          >_ Hello, I'm Isaac Tan here_
+          <span id="hello"></span><span id="flash">_</span>
         </div>
         <div class="sm:flex mt-6">
           <div class="grow">
@@ -260,6 +260,28 @@ export default {
   },
 
   mounted() {
+    const hello = document.querySelector("#hello");
+    const txt = ">_ Hello, I'm Isaac Tan here";
+
+    if (hello) {
+      let i = 0;
+      const typeWriter = () => {
+        if (i < txt.length) {
+          hello.innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, 100);
+        }
+      };
+      typeWriter();
+    }
+
+    const flash = document.querySelector("#flash");
+    if (flash) {
+      setInterval(() => {
+        flash.classList.toggle("opacity-0");
+      }, 500);
+    }
+
     client.getEntry(process.env.CONTENTFUL_ENTRY_ID).then((entry) => {
       this.aboutMe = entry;
     });
