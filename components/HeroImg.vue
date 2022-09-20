@@ -1,18 +1,12 @@
 <template>
   <div class="sm:mx-auto sm:max-w-3xl" style="min-height: 100% !important">
     <div class="p-5">
-      <nuxt-img
-        format="webp"
-        :src="'/bg.jpeg'"
-        alt="background"
-        class="rounded-xl"
-      />
-      <!-- <img
-        src="~/assets/img/bg.jpeg"
+      <img
+        src="~/assets/images/bg.jpeg"
         alt="background"
         class="rounded-2xl"
         srcset=""
-      /> -->
+      />
       <!-- <iframe src="https://my.spline.design/miniroomcopy-d8b3cdcabb7f0491cc82d9b10b3cae13/" frameborder="0" width="100%"
         height="350px"></iframe> -->
     </div>

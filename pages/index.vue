@@ -43,8 +43,8 @@
                 relative
               "
             >
-              <nuxt-img
-                src="/me.png"
+              <img
+                src="~/assets/images/me.png"
                 alt="Me"
                 class="absolute -top-4"
               />
