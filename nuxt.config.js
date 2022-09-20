@@ -58,10 +58,21 @@ export default {
       lang: 'en',
       name: 'Isaac Tan Portfolio',
       short_name: 'Isaac`s Portfolio',
+      description: 'This is a portfolio for Isaac Tan, including Recent Work, About, and Contact Page.',
+      theme_color: '#27272a',
+      background_color: '#27272a',
+      display: 'standalone',
+      orientation: 'portrait',
+      start_url: '/',
+      scope: '/',
+      icons: [
+        {
+          src: '/logo-border.png',
+          sizes: '512x512',
+          type: 'image/png'
+        }
+      ]
     },
-    icon: {
-      source: "@/static/logo-border.png"
-    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
