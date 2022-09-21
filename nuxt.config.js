@@ -6,7 +6,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'This is a portfolio for Isaac Tan, including Recent Work, About, and Contact Page.' },
+      { hid: 'description', name: 'description', content: 'This is a portfolio for Isaac Tan, including Recent Project, About, and Contact Page.' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'robots', content: 'noindex, follow' },
       { name: 'theme-color', content: '#27272a' },
@@ -57,8 +57,8 @@ export default {
     manifest: {
       lang: 'en',
       name: 'Isaac Tan Portfolio',
-      short_name: 'Isaac`s Portfolio',
-      description: 'This is a portfolio for Isaac Tan, including Recent Work, About, and Contact Page.',
+      short_name: 'Isaac Tan',
+      description: 'This is a portfolio for Isaac Tan, including Recent Project, About, and Contact Page.',
       theme_color: '#27272a',
       background_color: '#27272a',
       display: 'standalone',
@@ -75,13 +75,13 @@ export default {
     },
     meta: {
       name: 'Isaac Tan Portfolio',
-      description: 'This is a portfolio for Isaac Tan, including Recent Work, About, and Contact Page.',
+      description: 'This is a portfolio for Isaac Tan, including Recent Project, About, and Contact Page.',
       theme_color: '#27272a',
       ogHost: 'https://portfolio-isaactan98.vercel.app',
       ogImage: '/img/bg-image.jpeg',
     },
     icon: {
-      fileName: 'icon.png',
+      fileName: 'icon.png'
     },
   },
 

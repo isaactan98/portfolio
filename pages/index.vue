@@ -160,12 +160,12 @@
               <div
                 class="
                   absolute
-                  animate-pulse
                   top-1/2
                   ml-8
                   dark:text-white
                   text-2xl
                   font-bold
+                  stacks stacks-t
                 "
               >
                 Language
@@ -214,7 +214,6 @@
             >
               <div
                 class="
-                  animate-pulse
                   dark:text-white
                   text-2xl
                   font-bold
@@ -222,6 +221,7 @@
                   top-1/2
                   right-0
                   mr-8
+                  stacks stacks-t
                 "
               >
                 Framework
@@ -333,7 +333,7 @@ export default {
         second_section.style.top = `${
           (this.counter.lang / (this.counter.lang + this.counter.framework)) *
             100 -
-          0.3
+          0.28
         }%`;
 
         const obs = new IntersectionObserver((entries) => {
@@ -372,9 +372,21 @@ export default {
   transition: all 1s ease-in-out 0.25s;
 }
 
+.stacks-t {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-in-out 0.25s;
+}
+
 .show {
   opacity: 1;
-  transform: translateX(0px);
+  transform: translate(0px, 0px);
   width: 100%;
+}
+
+.stacks-t.show {
+  opacity: 1;
+  transform: translateY(0px);
+  width: auto;
 }
 </style>
