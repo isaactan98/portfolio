@@ -27,6 +27,10 @@ export default {
     {
       src: "~/plugins/firebase.js",
       mode: "client"
+    },
+    {
+      src: "~/plugins/infiniteloading.js",
+      ssr: false
     }
   ],
 

@@ -38,6 +38,11 @@
           </div>
         </div>
       </div>
+      <infinite-loading
+        class="mt-10"
+        @infinite="infiniteScroll"
+        spinner="spiral"
+      />
     </div>
   </div>
 </template>
@@ -51,32 +56,65 @@ export default {
     return {
       repo: [],
       loading: true,
+      url: "https://api.github.com/users/isaactan98/repos",
+      counter: 0,
     };
   },
   mounted() {
-    const url = "https://api.github.com/users/isaactan98/repos";
-
-    const sortByDate = (arr) => {
+    fetch(this.url)
+      .then((response) => response.json())
+      .then((data) => {
+        this.sortByDate(data);
+        data.forEach((element) => {
+          this.loading = false;
+          if (this.counter < 6) {
+            if (element.private == false) {
+              this.repo.push(element);
+              this.counter++;
+            }
+          }
+        });
+      })
+      .catch((e) => console.log(e));
+  },
+  methods: {
+    sortByDate(arr) {
       const sorter = (a, b) => {
         return (
           new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
         );
       };
       arr.sort(sorter);
-    };
+    },
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        sortByDate(data);
-        data.forEach((element) => {
-          this.loading = false;
-          if (element.private == false) {
-            this.repo.push(element);
-          }
-        });
-      })
-      .catch((e) => console.log(e));
+    infiniteScroll($state) {
+      setTimeout(() => {
+        fetch(this.url)
+          .then((response) => response.json())
+          .then((data) => {
+            this.sortByDate(data);
+            data.forEach((element) => {
+              this.repo.forEach((r) => {
+                if (element != null && element.id == r.id) {
+                  element = null;
+                }
+              });
+              // console.log(this.repo);
+              if (element != null) {
+                if (this.repo.length <= data.length) {
+                  this.repo.push(element);
+                  $state.loaded();
+                } else {
+                  $state.complete();
+                }
+              } else {
+                $state.complete();
+              }
+            });
+          })
+          .catch((e) => console.log(e));
+      }, 2000);
+    },
   },
 };
 </script>
