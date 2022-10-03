@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-white/30 dark:bg-zinc-900/10 fixed w-full z-[1]"
+  <nav class="bg-white/30 dark:bg-stone-900/20 fixed w-full z-[1]"
     style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px)">
     <div class="w-full flex max-w-2xl p-2 justify-center inline-se" wrap="wrap" align="center">
       <div class="flex items-center mr-5">

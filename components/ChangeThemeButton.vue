@@ -8,7 +8,7 @@
       text-gray-500
       dark:text-gray-400
       bg-gray-100
-      dark:bg-zinc-700
+      dark:bg-stone-700
       focus:outline-none
       rounded-lg
       text-sm

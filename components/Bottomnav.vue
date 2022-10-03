@@ -1,7 +1,7 @@
 <template>
   <div class="bottom-0 w-full fixed sm:hidden">
     <div
-      class="bg-white/30 dark:bg-gray-700/30 w-full backdrop-blur-md"
+      class="bg-white/30 dark:bg-stone-800/30 w-full backdrop-blur-md"
       style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px)"
     >
       <div
