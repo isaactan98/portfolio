@@ -8,7 +8,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'This is a portfolio for Isaac Tan, including Recent Project, About, and Contact Page.' },
       { name: 'format-detection', content: 'telephone=no' },
-      { name: 'robots', content: 'noindex, follow' },
+      { name: 'robot', content: 'index, follow' },
       { name: 'theme-color', content: '#27272a' },
       {
         hid: 'keywords',
