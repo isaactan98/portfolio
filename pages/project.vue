@@ -14,11 +14,7 @@
       </div>
 
       <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 mb-10 sm:mb-0" v-else>
-        <div
-          class="card border border-black dark:border-white"
-          v-for="(x, key) in repo"
-          :key="key"
-        >
+        <div class="card border border-black dark:border-white" v-for="(x, key) in repo" :key="key">
           <div class="card-body">
             <h2 class="card-title dark:text-white underline">{{ x.name }}</h2>
             <p class="dark:text-white">
@@ -26,23 +22,16 @@
             </p>
             <div class="card-actions justify-between items-center mt-3">
               <span class="badge badge-primary dark:text-white">{{
-                x.language
+              x.language
               }}</span>
-              <a
-                :href="x.html_url"
-                target="_blank"
-                class="btn btn-sm btn-primary dark:text-white"
-                >View Repo</a
-              >
+              <a :href="x.html_url" target="_blank" class="btn btn-sm btn-primary dark:text-white">View Repo</a>
             </div>
           </div>
         </div>
       </div>
-      <infinite-loading
-        class="mt-10"
-        @infinite="infiniteScroll"
-        spinner="spiral"
-      />
+      <div id="load_more" class="w-full text-center mt-8">
+        <label for="" class="btn btn-ghost dark:text-white loading" v-if="load_more"></label>
+      </div>
     </div>
   </div>
 </template>
@@ -50,7 +39,7 @@
 <script>
 export default {
   head: {
-    title: "Works - Isaac Tan | Portfolio",
+    title: "Projects - Isaac Tan | Portfolio",
   },
   data() {
     return {
@@ -58,6 +47,8 @@ export default {
       loading: true,
       url: "https://api.github.com/users/isaactan98/repos",
       counter: 0,
+      load_more: false,
+      data_length: 0,
     };
   },
   mounted() {
@@ -65,6 +56,7 @@ export default {
       .then((response) => response.json())
       .then((data) => {
         this.sortByDate(data);
+        this.data_length = data.length;
         data.forEach((element) => {
           this.loading = false;
           if (this.counter < 6) {
@@ -75,7 +67,24 @@ export default {
           }
         });
       })
+      .then(() => {
+        this.counter = 0;
+      })
       .catch((e) => console.log(e));
+
+    const load = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (this.repo.length < this.data_length) {
+            this.load_more = true;
+            this.loadMore();
+          }
+        }
+      });
+    });
+
+    load.observe(document.querySelector("#load_more"));
+    
   },
   methods: {
     sortByDate(arr) {
@@ -87,36 +96,40 @@ export default {
       arr.sort(sorter);
     },
 
-    infiniteScroll($state) {
+    loadMore() {
       setTimeout(() => {
         fetch(this.url)
           .then((response) => response.json())
           .then((data) => {
             this.sortByDate(data);
             data.forEach((element) => {
-              this.repo.forEach((r) => {
-                if (element != null && element.id == r.id) {
-                  element = null;
+              if (this.repo.length < data.length) {
+                this.repo.forEach((r) => {
+                  if (element != null && element.id == r.id) {
+                    element = null;
+                  }
+                });
+                if (element != null && this.counter < 6) {
+                  if (element.private == false) {
+                    this.repo.push(element);
+                    this.counter++;
+                  }
                 }
-              });
-              // console.log(this.repo);
-              if (element != null) {
-                if (this.repo.length <= data.length) {
-                  this.repo.push(element);
-                  $state.loaded();
-                } else {
-                  $state.complete();
-                }
-              } else {
-                $state.complete();
               }
             });
+            console.log(this.repo.length, data.length);
+            this.load_more = false;
+          })
+          .then(() => {
+            this.counter = 0;
           })
           .catch((e) => console.log(e));
-      }, 2000);
+      }, 3000);
     },
   },
 };
 </script>
 
-<style></style>
+<style>
+
+</style>
