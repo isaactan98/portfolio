@@ -27,19 +27,11 @@
               class="w-2/3 bg-transparent outline-none dark:text-white"
               placeholder="Write your message here."
             ></textarea></code></pre>
-          <pre
-            data-prefix=">"
-            class="text-green-500"
-            id="show_msg"
-          ><code>Done!</code></pre>
+          <pre data-prefix=">" class="text-green-500" id="show_msg"><code>Done!</code></pre>
           <!--  -->
           <div class="my-3 flex justify-end">
-            <button
-              type="submit"
-              id="submit"
-              class="btn bg-zinc-500 hover:text-white"
-            >
-              Submit Here
+            <button type="submit" id="submit" class="btn bg-black text-white hover:text-black hover:bg-white border-0">
+              Submit
             </button>
           </div>
         </div>
@@ -101,4 +93,5 @@ export default {
 </script>
 
 <style>
+
 </style>
