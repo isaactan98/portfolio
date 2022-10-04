@@ -5,7 +5,7 @@
         <div
           class="
             bg-zinc-500/50
-            dark:bg-black
+            dark:bg-stone-500/50
             backdrop-blur
             text-center
             p-3
