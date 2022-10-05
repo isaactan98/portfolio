@@ -6,27 +6,27 @@
       </div>
       <form ref="form" @submit.prevent="sendEmail">
         <div class="p-5 mt-3 mockup-code bg-slate-50 dark:bg-zinc-700">
-          <pre data-prefix="1" class="my-2"><code><input
-              id="title"
-              name="title"
-              type="text"
-              class="w-2/3 bg-transparent outline-none dark:text-white"
-              placeholder="Enter title here." autofocus autocomplete="off"
-            /></code></pre>
-          <pre data-prefix="2" class="my-2"><code><input
-              id="email"
-              name="email"
-              type="email"
-              class="w-2/3 bg-transparent outline-none dark:text-white"
-              placeholder="Enter your email here." autocomplete="off"
-            /></code></pre>
+          <pre data-prefix="1" class="my-2">
+            <code>
+              <input id="title" name="title" type="text" class="w-2/3 bg-transparent outline-none dark:text-white" placeholder="Enter title here." autofocus autocomplete="off"/>
+            </code>
+          </pre>
+          <pre data-prefix="2" class="my-2">
+            <code>
+              <input id="email" name="email" type="email" class="w-2/3 bg-transparent outline-none dark:text-white" placeholder="Enter your email here." autocomplete="off" />
+          </code>
+          </pre>
           <pre data-prefix="3"><code></code></pre>
-          <pre data-prefix="" class="my-2"><code><textarea
+          <pre data-prefix="" class="my-2">
+            <code>
+              <textarea
               id="message"
               name="message"
               class="w-2/3 bg-transparent outline-none dark:text-white"
               placeholder="Write your message here."
-            ></textarea></code></pre>
+            ></textarea>
+          </code>
+        </pre>
           <pre data-prefix=">" class="text-green-500" id="show_msg"><code>Done!</code></pre>
           <!--  -->
           <div class="my-3 flex justify-end">

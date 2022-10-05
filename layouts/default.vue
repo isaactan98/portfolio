@@ -51,20 +51,6 @@ export default {
     get_year.innerHTML = new Date().getFullYear();
 
   },
-  methods: {
-    // locomotiveScrollInit() {
-    //   this.lmS = new this.locomotiveScroll({
-    //     el: document.querySelector("[data-scroll-container]"),
-    //     smooth: true,
-    //     mobile: {
-    //       smooth: true,
-    //     },
-    //     tablet: {
-    //       smooth: true,
-    //     },
-    //   });
-    // },
-  },
 
   transition: "slide-bottom",
 };
