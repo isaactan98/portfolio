@@ -130,7 +130,7 @@ export default {
             this.counter = 0;
           })
           .catch((e) => console.log(e));
-      }, 3000);
+      }, 1000);
     },
   },
 };
