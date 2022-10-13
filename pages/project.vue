@@ -123,7 +123,7 @@ export default {
                 }
               }
             });
-            console.log(this.repo.length, data.length);
+            // console.log(this.repo.length, data.length);
             this.load_more = false;
           })
           .then(() => {
