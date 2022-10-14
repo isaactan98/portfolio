@@ -7,7 +7,7 @@
 
       <div class="grid gap-4 grid-cols-1 sm:grid-cols-2" v-if="loading == true">
         <div class="card bg-gray-100 shadow-xl h-40" v-for="x in 6" :key="x">
-          <div class="card-body bg-zinc-300 dark:bg-zinc-700 animate-pulse">
+          <div class="card-body bg-zinc-200 dark:bg-zinc-800 animate-pulse">
             <div class="card-actions justify-end"></div>
           </div>
         </div>
