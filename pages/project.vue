@@ -20,6 +20,9 @@
             <p class="dark:text-white">
               {{ x.description ?? "No Description" }}
             </p>
+            <div class="card-actions justify-end" v-if="x.homepage != '' && x.homepage != null">
+              <a :href="x.homepage" target="_blank" class="btn btn-sm dark:border-white dark:text-white">View</a>
+            </div>
             <div class="card-actions justify-between items-center mt-3">
               <span class="badge badge-primary dark:text-white">{{
               x.language
