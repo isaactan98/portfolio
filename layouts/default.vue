@@ -5,7 +5,7 @@
       relative
       sm:grid
       bg-zinc-100
-      dark:bg-stone-900
+      dark:bg-zinc-900
     ">
     <Navbar />
     <div>
