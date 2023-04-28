@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "NITRO_PRESET=vercel-edge nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "build": "nuxt generate"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
