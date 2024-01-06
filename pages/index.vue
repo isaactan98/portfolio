@@ -58,6 +58,10 @@
             <span class="font-bold mr-4">2022</span>
             Fresh Graduated from Computer Science in Software Engineering at UTM
           </div>
+          <div class="pl-14 -indent-14 dark:text-white">
+            <span class="font-bold mr-4">2023</span>
+            Working as a Software Engineer in Singapore
+          </div>
         </div>
         <!--  -->
         <div class="mb-12">
