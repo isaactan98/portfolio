@@ -54,7 +54,7 @@ export default {
     return {
       repo: [],
       loading: true,
-      url: "https://api.github.com/users/isaactan98/repos",
+      url: "https://api.github.com/users/isaactan98/repos?sort=updated_at",
       counter: 0,
       load_more: false,
       data_length: 0,
