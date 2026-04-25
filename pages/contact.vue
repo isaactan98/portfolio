@@ -1,97 +1,199 @@
+<script setup lang="ts">
+useHead({ title: 'Contact — Isaac Tan' })
+
+const { observeElements } = useScrollAnimation()
+
+const form = reactive({
+  name: '',
+  email: '',
+  message: ''
+})
+
+const isSubmitting = ref(false)
+const isSubmitted = ref(false)
+const hasError = ref(false)
+
+// TODO: Integrate your preferred email service here (e.g. EmailJS, Resend, or a Nuxt server route)
+const handleSubmit = async () => {
+  isSubmitting.value = true
+  hasError.value = false
+
+  try {
+    // Placeholder: replace with actual email API call
+    await new Promise((resolve) => setTimeout(resolve, 800))
+    isSubmitted.value = true
+  }
+  catch {
+    hasError.value = true
+  }
+  finally {
+    isSubmitting.value = false
+  }
+}
+
+onMounted(() => {
+  observeElements('.fade-up')
+})
+
+const contacts = [
+  {
+    label: 'Email',
+    value: 'hello@isaactan.dev',
+    href: 'mailto:hello@isaactan.dev',
+    icon: 'i-heroicons-envelope-20-solid'
+  },
+  {
+    label: 'GitHub',
+    value: 'github.com/isaactan98',
+    href: 'https://github.com/isaactan98',
+    icon: 'i-simple-icons-github'
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/isaactan98',
+    href: 'https://linkedin.com/in/isaactan98',
+    icon: 'i-heroicons-user-circle-20-solid'
+  }
+]
+</script>
+
 <template>
-  <div class="grid p-5 sm:m-auto min-h-[70vh]">
-    <div class="">
-      <div class="text-zinc-800 dark:text-white font-bold text-2xl">
-        Contact Me
-      </div>
-      <form ref="form" @submit.prevent="sendEmail">
-        <div class="p-5 mt-3 mockup-code bg-slate-50 dark:bg-zinc-700">
-          <pre data-prefix="1" class="my-2">
-            <code>
-              <input id="title" name="title" type="text" class="w-2/3 bg-transparent outline-none dark:text-white" placeholder="Enter title here." autofocus autocomplete="off"/>
-            </code>
-          </pre>
-          <pre data-prefix="2" class="my-2">
-            <code>
-              <input id="email" name="email" type="email" class="w-2/3 bg-transparent outline-none dark:text-white" placeholder="Enter your email here." autocomplete="off" />
-          </code>
-          </pre>
-          <pre data-prefix="3"><code></code></pre>
-          <pre data-prefix="" class="my-2">
-            <code>
-              <textarea
-              id="message"
-              name="message"
-              class="w-2/3 bg-transparent outline-none dark:text-white"
-              placeholder="Write your message here."
-            ></textarea>
-          </code>
-        </pre>
-          <pre data-prefix=">" class="text-green-500" id="show_msg"><code>Done!</code></pre>
-          <!--  -->
-          <div class="my-3 flex justify-end">
-            <button type="submit" id="submit" class="btn bg-black text-white hover:text-black hover:bg-white border-0">
-              Submit
-            </button>
+  <div class="max-w-5xl mx-auto px-6 py-20">
+    <!-- Header -->
+    <div class="fade-up mb-16">
+      <p class="text-xs font-mono text-indigo-400 font-medium tracking-widest uppercase mb-3">
+        Contact
+      </p>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+        Let's talk.
+      </h1>
+      <p class="text-lg text-[#a3a3a3] max-w-lg leading-relaxed">
+        Have a project in mind? I'm open to freelance work, interesting collaborations, and full-time opportunities in Singapore.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16">
+      <!-- Contact links -->
+      <div class="fade-up flex flex-col gap-4">
+        <a
+          v-for="contact in contacts"
+          :key="contact.label"
+          :href="contact.href"
+          :target="contact.href.startsWith('mailto:') ? '_self' : '_blank'"
+          :rel="contact.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'"
+          class="group flex items-center gap-4 p-5 rounded-xl border border-white/8 bg-[#1a1a1a] hover:border-indigo-500/30 hover:bg-[#1e1e1e] transition-all duration-200"
+        >
+          <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-indigo-500/20 transition-colors">
+            <UIcon :name="contact.icon" class="w-5 h-5 text-indigo-400" />
           </div>
+          <div>
+            <p class="text-xs text-[#5c5c5c] mb-0.5">{{ contact.label }}</p>
+            <p class="text-sm font-medium text-white">{{ contact.value }}</p>
+          </div>
+        </a>
+
+        <div class="mt-4 p-5 rounded-xl border border-white/8 bg-[#1a1a1a]">
+          <p class="text-xs text-[#5c5c5c] mb-1">Location</p>
+          <p class="text-sm font-medium text-white">Singapore 🇸🇬</p>
+          <p class="text-xs text-[#a3a3a3] mt-1">Also works with clients in MY, remote worldwide</p>
         </div>
-      </form>
+      </div>
+
+      <!-- Contact form -->
+      <div class="fade-up" style="transition-delay: 150ms">
+        <Transition name="fade" mode="out-in">
+          <div
+            v-if="isSubmitted"
+            key="success"
+            class="flex flex-col items-center justify-center text-center p-10 rounded-xl border border-emerald-500/20 bg-emerald-500/5 min-h-[300px]"
+          >
+            <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
+              <UIcon name="i-heroicons-check-20-solid" class="w-6 h-6 text-emerald-400" />
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2">Message sent!</h3>
+            <p class="text-sm text-[#a3a3a3]">
+              Thanks for reaching out. I'll get back to you within 1–2 business days.
+            </p>
+          </div>
+
+          <form
+            v-else
+            key="form"
+            class="flex flex-col gap-5"
+            @submit.prevent="handleSubmit"
+          >
+            <div>
+              <label for="contact-name" class="block text-xs font-medium text-[#a3a3a3] mb-2 tracking-wide">
+                Name
+              </label>
+              <input
+                id="contact-name"
+                v-model="form.name"
+                type="text"
+                required
+                placeholder="Your name"
+                class="w-full px-4 py-3 rounded-lg border border-white/15 bg-[#181818] text-white placeholder-[#5c5c5c] text-sm focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/25 focus:bg-[#1a1a1a] transition-all"
+              />
+            </div>
+
+            <div>
+              <label for="contact-email" class="block text-xs font-medium text-[#a3a3a3] mb-2 tracking-wide">
+                Email
+              </label>
+              <input
+                id="contact-email"
+                v-model="form.email"
+                type="email"
+                required
+                placeholder="your@email.com"
+                class="w-full px-4 py-3 rounded-lg border border-white/15 bg-[#181818] text-white placeholder-[#5c5c5c] text-sm focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/25 focus:bg-[#1a1a1a] transition-all"
+              />
+            </div>
+
+            <div>
+              <label for="contact-message" class="block text-xs font-medium text-[#a3a3a3] mb-2 tracking-wide">
+                Message
+              </label>
+              <textarea
+                id="contact-message"
+                v-model="form.message"
+                required
+                rows="5"
+                placeholder="Tell me about your project or what you're working on..."
+                class="w-full px-4 py-3 rounded-lg border border-white/15 bg-[#181818] text-white placeholder-[#5c5c5c] text-sm focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/25 focus:bg-[#1a1a1a] transition-all resize-none"
+              />
+            </div>
+
+            <p v-if="hasError" class="text-sm text-red-400">
+              Something went wrong. Please try emailing me directly.
+            </p>
+
+            <button
+              type="submit"
+              :disabled="isSubmitting"
+              class="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed text-white transition-colors duration-200"
+            >
+              <UIcon
+                v-if="isSubmitting"
+                name="i-heroicons-arrow-path-20-solid"
+                class="w-4 h-4 animate-spin"
+              />
+              {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+            </button>
+          </form>
+        </Transition>
+      </div>
     </div>
   </div>
 </template>
 
-<script>
-import emailjs from "@emailjs/browser";
-
-export default {
-  head: {
-    title: "Contact - Isaac Tan | Portfolio",
-  },
-  data() {
-    return {
-      lmS: null,
-    };
-  },
-  mounted() {
-    const show_msg = document.getElementById("show_msg");
-    show_msg.classList.add("hidden");
-  },
-  methods: {
-    sendEmail() {
-      const submit_btn = document.getElementById("submit");
-      const input_title = document.getElementById("title");
-      const input_email = document.getElementById("email");
-      const input_message = document.getElementById("message");
-      const show_msg = document.getElementById("show_msg");
-
-      submit_btn.classList.add("loading");
-
-      emailjs
-        .sendForm(
-          process.env.EMAIL_JS_SERVICE_ID,
-          process.env.EMAIL_JS_TEMPLATE_ID,
-          this.$refs.form,
-          process.env.EMAIL_JS_PUBLIC_KEY
-        )
-        .then((s) => {
-          submit_btn.classList.remove("loading");
-          input_title.value = "";
-          input_email.value = "";
-          input_message.value = "";
-          show_msg.classList.remove("hidden");
-
-          setTimeout(() => {
-            show_msg.classList.add("hidden");
-          }, 10000);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    },
-  },
-};
-</script>
-
-<style>
-
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

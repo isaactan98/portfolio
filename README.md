@@ -1,26 +1,44 @@
-# Building Portfolio with Nuxt JS
+# Isaac Tan — Portfolio
 
-<p style="font-size: 20px">
-Isaac Tan | Portfolio
-</p>
+Personal portfolio site built with Nuxt 3, TypeScript, Tailwind CSS, and Nuxt UI.
 
-## Build Setup
+Live: [isaactan.vercel.app](https://isaactan.vercel.app)
+
+## Tech Stack
+
+- **Framework**: Nuxt 3 + TypeScript
+- **UI**: Nuxt UI + Tailwind CSS
+- **Deploy**: Vercel
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Hero, featured projects, freelance CTA |
+| `/about` | Bio, experience timeline, tech stack |
+| `/projects` | 3 detailed case studies |
+| `/contact` | Contact form + social links |
+
+## Development
 
 ```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+npm install
+npm run dev       # localhost:3000
 ```
 
-# This project is to step my foot into Nuxt JS by building a portfolio with TailwindCSS. 
-## `Tools`
-### Vue, Nuxt, TailwindCSS
+## Build & Deploy
+
+```bash
+npm run build     # SSR build (Vercel)
+npm run generate  # Static build
+npm run preview   # Preview production build locally
+```
+
+Deploys automatically to Vercel on push to `master`.
+
+## Contact Form
+
+The form UI is complete. To wire up email sending, add your service credentials to `.env` and update `pages/contact.vue`:
+
+- **[EmailJS](https://www.emailjs.com/)** — client-side, no backend needed
+- **[Resend](https://resend.com/)** — server-side via `server/api/contact.post.ts`
