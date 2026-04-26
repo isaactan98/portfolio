@@ -34,7 +34,7 @@ const timeline = [
   },
   {
     year: '2023 – Present',
-    title: 'Software Engineer @ NCS Group, Singapore',
+    title: 'Software Engineer @ Enterprise Tech Company, Singapore',
     description:
       'Enterprise systems development — internal tools, service delivery, full-stack feature ownership',
     current: true
@@ -92,7 +92,7 @@ const techStack = [
         </div>
       </div>
       <p class="text-lg text-[#a3a3a3] max-w-2xl leading-relaxed">
-        Full-Stack Software Engineer based in Singapore, originally from Melaka, Malaysia. 3+ years of enterprise software development at NCS Group. I build internal systems, self-hosted tools, and side projects that solve real problems.
+        Full-Stack Software Engineer based in Singapore, originally from Melaka, Malaysia. 3+ years of enterprise software development in Singapore. I build internal systems, self-hosted tools, and side projects that solve real problems.
       </p>
     </div>
 

@@ -13,7 +13,7 @@ const extraCount = computed(() => Math.max(0, props.tags.length - 3))
 
 <template>
   <div
-    class="group relative p-6 rounded-xl border border-white/8 bg-[#1a1a1a] hover:border-[#e8ff5c]/30 hover:bg-[#1a1a12] hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(232,255,92,0.08)] transition-all duration-300 flex flex-col h-full"
+    class="group relative p-6 rounded-xl border border-white/8 bg-[#141414] hover:border-[#e8ff5c]/30 hover:bg-[#1a1a12] hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(232,255,92,0.08)] transition-all duration-300 flex flex-col h-full"
   >
     <div class="flex flex-wrap gap-2 mb-4 items-center">
       <TechBadge v-for="tag in visibleTags" :key="tag" :label="tag" />
