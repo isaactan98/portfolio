@@ -5,9 +5,16 @@ onMounted(() => {
   observeElements('.fade-up')
 })
 
+const heroStats = [
+  { value: '3+', label: 'Years at NCS' },
+  { value: '300+', label: 'Project Man-days' },
+  { value: '2', label: 'Self-Hosted Apps' }
+]
+
 const featuredProjects = [
   {
     title: 'Low No Attendance System',
+    type: 'Enterprise · Internal System',
     tags: ['Nuxt 3', 'FastAPI', 'PostgreSQL'],
     description:
       'Enterprise internal system for automated attendance tracking and reporting. Delivered 30–50% ahead of Business Analyst time estimates.',
@@ -15,6 +22,7 @@ const featuredProjects = [
   },
   {
     title: 'Expense Tracker — Dual Currency PWA',
+    type: 'Personal · Self-Hosted PWA',
     tags: ['Nuxt 3', 'Express.js', 'Docker', 'SQLite'],
     description:
       'Self-hosted PWA for SGD/MYR dual-currency expense tracking. Offline-capable, zero cloud dependency, runs on my own server.',
@@ -22,6 +30,7 @@ const featuredProjects = [
   },
   {
     title: 'Miku AI Assistant',
+    type: 'Personal · Hardware Project',
     tags: ['Raspberry Pi 5', 'Python', 'Local AI'],
     description:
       'Local AI assistant on a Raspberry Pi 5 with animated Waveshare LCD and custom 3D-printed case. Fully offline capable.',
@@ -32,9 +41,9 @@ const featuredProjects = [
 
 <template>
   <div>
-    <!-- Hero: split layout — text left, photo right -->
+    <!-- Hero: split layout — text left, portrait photo + stats right -->
     <section class="relative min-h-[92vh] flex items-center hero-grid overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-indigo-950/8 via-transparent to-[#0f0f0f] pointer-events-none" />
+      <div class="absolute inset-0 bg-gradient-to-b from-[#e8ff5c]/4 via-transparent to-[#0f0f0f] pointer-events-none" />
 
       <div class="relative max-w-5xl mx-auto px-6 py-20 w-full">
         <div class="grid md:grid-cols-[1fr_auto] gap-12 md:gap-16 items-center">
@@ -47,18 +56,15 @@ const featuredProjects = [
               Available for freelance projects
             </div>
 
-            <!-- Headline: pure white + single accent underline -->
+            <!-- Headline: pure white + single accent word -->
             <h1 class="text-5xl md:text-[62px] font-extrabold tracking-tight leading-[1.08] text-white mb-5">
               Full-Stack Engineer<br />
               building
-              <span class="relative inline-block ml-2">
-                enterprise
-                <span class="absolute -bottom-1 left-0 w-full h-[3px] bg-indigo-500 rounded-full" />
-              </span><br />
+              <span class="text-[#e8ff5c] ml-2">enterprise</span><br />
               &amp; self-hosted systems
             </h1>
 
-            <!-- Sub-headline (no duplicate) -->
+            <!-- Sub-headline -->
             <p class="text-base md:text-lg text-[#a3a3a3] mb-8">
               NCS Group · Singapore · Nuxt 3 · FastAPI · TypeScript
             </p>
@@ -67,7 +73,7 @@ const featuredProjects = [
             <div class="flex flex-col sm:flex-row gap-4">
               <NuxtLink
                 to="/projects"
-                class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors duration-200"
+                class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold bg-[#e8ff5c] hover:bg-[#d4eb4a] text-[#0f0f0f] transition-colors duration-200"
               >
                 View My Work
                 <UIcon name="i-heroicons-arrow-right-20-solid" class="w-4 h-4" />
@@ -81,15 +87,27 @@ const featuredProjects = [
             </div>
           </div>
 
-          <!-- Right: profile photo (desktop only) -->
-          <div class="hidden md:flex justify-center items-center">
-            <div class="relative">
-              <div class="absolute inset-4 rounded-2xl bg-indigo-600/20 blur-3xl" />
+          <!-- Right: portrait photo + micro-stats (desktop only) -->
+          <div class="hidden md:flex items-start gap-4">
+            <!-- Portrait photo -->
+            <div class="relative flex-shrink-0">
+              <div class="absolute inset-4 rounded-2xl bg-[#e8ff5c]/15 blur-3xl" />
               <img
                 src="~/assets/images/me.png"
                 alt="Isaac Tan"
-                class="relative w-64 h-64 lg:w-72 lg:h-72 object-cover object-top rounded-2xl border border-white/10 shadow-2xl"
+                class="relative w-48 h-64 lg:w-52 lg:h-72 object-cover object-top rounded-2xl border border-white/10 shadow-2xl"
               />
+            </div>
+            <!-- Micro-stats -->
+            <div class="flex flex-col gap-3 pt-2">
+              <div
+                v-for="stat in heroStats"
+                :key="stat.label"
+                class="px-4 py-3 rounded-xl border border-white/8 bg-[#1a1a1a]"
+              >
+                <p class="text-2xl font-bold text-[#e8ff5c]">{{ stat.value }}</p>
+                <p class="text-xs text-[#6b6b6b] mt-0.5 whitespace-nowrap">{{ stat.label }}</p>
+              </div>
             </div>
           </div>
 
@@ -108,7 +126,7 @@ const featuredProjects = [
     <!-- Featured Projects -->
     <section class="max-w-5xl mx-auto px-6 pt-20 pb-24">
       <div class="fade-up mb-10">
-        <p class="text-xs font-mono text-indigo-400 font-medium tracking-widest uppercase mb-3">
+        <p class="text-xs font-mono text-[#e8ff5c] font-medium tracking-widest uppercase mb-3">
           01 — Selected Work
         </p>
         <h2 class="text-3xl md:text-4xl font-bold text-white">Featured Projects</h2>
@@ -138,10 +156,10 @@ const featuredProjects = [
 
     <!-- Freelance: full-width border section (no card) -->
     <section class="relative border-t border-b border-white/8 py-20 fade-up">
-      <div class="absolute inset-0 bg-gradient-to-r from-indigo-950/12 via-transparent to-transparent pointer-events-none" />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#e8ff5c]/5 via-transparent to-transparent pointer-events-none" />
       <div class="relative max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-16">
         <div class="max-w-xl">
-          <p class="text-xs font-mono text-indigo-400 font-medium tracking-widest uppercase mb-4">
+          <p class="text-xs font-mono text-[#e8ff5c] font-medium tracking-widest uppercase mb-4">
             02 — Freelance
           </p>
           <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
@@ -154,7 +172,7 @@ const featuredProjects = [
         <div class="flex-shrink-0">
           <NuxtLink
             to="/contact"
-            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors duration-200 whitespace-nowrap"
+            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold bg-[#e8ff5c] hover:bg-[#d4eb4a] text-[#0f0f0f] transition-colors duration-200 whitespace-nowrap"
           >
             Start a Conversation
           </NuxtLink>

@@ -61,7 +61,7 @@ const contacts = [
   <div class="max-w-5xl mx-auto px-6 py-20">
     <!-- Header -->
     <div class="fade-up mb-16">
-      <p class="text-xs font-mono text-indigo-400 font-medium tracking-widest uppercase mb-3">
+      <p class="text-xs font-mono text-[#e8ff5c] font-medium tracking-widest uppercase mb-3">
         Contact
       </p>
       <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
@@ -81,10 +81,10 @@ const contacts = [
           :href="contact.href"
           :target="contact.href.startsWith('mailto:') ? '_self' : '_blank'"
           :rel="contact.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'"
-          class="group flex items-center gap-4 p-5 rounded-xl border border-white/8 bg-[#1a1a1a] hover:border-indigo-500/30 hover:bg-[#1e1e1e] transition-all duration-200"
+          class="group flex items-center gap-4 p-5 rounded-xl border border-white/8 bg-[#1a1a1a] hover:border-[#e8ff5c]/25 hover:bg-[#1e1e1e] transition-all duration-200"
         >
-          <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-indigo-500/20 transition-colors">
-            <UIcon :name="contact.icon" class="w-5 h-5 text-indigo-400" />
+          <div class="w-10 h-10 rounded-lg bg-[#e8ff5c]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#e8ff5c]/15 transition-colors">
+            <UIcon :name="contact.icon" class="w-5 h-5 text-[#e8ff5c]" />
           </div>
           <div>
             <p class="text-xs text-[#5c5c5c] mb-0.5">{{ contact.label }}</p>
@@ -132,7 +132,7 @@ const contacts = [
                 type="text"
                 required
                 placeholder="Your name"
-                class="w-full px-4 py-3 rounded-lg border border-white/15 bg-[#181818] text-white placeholder-[#5c5c5c] text-sm focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/25 focus:bg-[#1a1a1a] transition-all"
+                class="w-full px-4 py-3 rounded-lg border border-white/15 bg-[#181818] text-white placeholder-[#5c5c5c] text-sm focus:outline-none focus:border-[#e8ff5c]/50 focus:ring-1 focus:ring-[#e8ff5c]/20 focus:bg-[#1a1a1a] transition-all"
               />
             </div>
 
@@ -146,7 +146,7 @@ const contacts = [
                 type="email"
                 required
                 placeholder="your@email.com"
-                class="w-full px-4 py-3 rounded-lg border border-white/15 bg-[#181818] text-white placeholder-[#5c5c5c] text-sm focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/25 focus:bg-[#1a1a1a] transition-all"
+                class="w-full px-4 py-3 rounded-lg border border-white/15 bg-[#181818] text-white placeholder-[#5c5c5c] text-sm focus:outline-none focus:border-[#e8ff5c]/50 focus:ring-1 focus:ring-[#e8ff5c]/20 focus:bg-[#1a1a1a] transition-all"
               />
             </div>
 
@@ -160,7 +160,7 @@ const contacts = [
                 required
                 rows="5"
                 placeholder="Tell me about your project or what you're working on..."
-                class="w-full px-4 py-3 rounded-lg border border-white/15 bg-[#181818] text-white placeholder-[#5c5c5c] text-sm focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/25 focus:bg-[#1a1a1a] transition-all resize-none"
+                class="w-full px-4 py-3 rounded-lg border border-white/15 bg-[#181818] text-white placeholder-[#5c5c5c] text-sm focus:outline-none focus:border-[#e8ff5c]/50 focus:ring-1 focus:ring-[#e8ff5c]/20 focus:bg-[#1a1a1a] transition-all resize-none"
               />
             </div>
 
@@ -171,7 +171,7 @@ const contacts = [
             <button
               type="submit"
               :disabled="isSubmitting"
-              class="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed text-white transition-colors duration-200"
+              class="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold bg-[#e8ff5c] hover:bg-[#d4eb4a] disabled:opacity-60 disabled:cursor-not-allowed text-[#0f0f0f] transition-colors duration-200"
             >
               <UIcon
                 v-if="isSubmitting"

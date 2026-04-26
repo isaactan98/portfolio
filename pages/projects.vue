@@ -81,7 +81,7 @@ const projects: Project[] = [
   <div class="max-w-5xl mx-auto px-6 py-20">
     <!-- Header -->
     <div class="fade-up mb-16">
-      <p class="text-xs font-mono text-indigo-400 font-medium tracking-widest uppercase mb-3">
+      <p class="text-xs font-mono text-[#e8ff5c] font-medium tracking-widest uppercase mb-3">
         Work
       </p>
       <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Projects</h1>
@@ -120,13 +120,13 @@ const projects: Project[] = [
         <!-- Problem + Solution grid -->
         <div class="grid md:grid-cols-2 gap-6 md:gap-8 mb-6">
           <div>
-            <h3 class="text-xs font-mono text-indigo-400 tracking-widest uppercase mb-3">
+            <h3 class="text-xs font-mono text-[#e8ff5c] tracking-widest uppercase mb-3">
               The Problem
             </h3>
             <p class="text-sm text-[#c0c0c0] leading-relaxed">{{ project.problem }}</p>
           </div>
           <div>
-            <h3 class="text-xs font-mono text-indigo-400 tracking-widest uppercase mb-3">
+            <h3 class="text-xs font-mono text-[#e8ff5c] tracking-widest uppercase mb-3">
               What I Built
             </h3>
             <p class="text-sm text-[#c0c0c0] leading-relaxed">{{ project.solution }}</p>
@@ -135,15 +135,15 @@ const projects: Project[] = [
 
         <!-- Tech stack detail -->
         <div class="mb-6">
-          <h3 class="text-xs font-mono text-indigo-400 tracking-widest uppercase mb-3">
+          <h3 class="text-xs font-mono text-[#e8ff5c] tracking-widest uppercase mb-3">
             Tech Stack
           </h3>
           <p class="text-sm text-[#c0c0c0] leading-relaxed">{{ project.tech }}</p>
         </div>
 
         <!-- Impact -->
-        <div class="rounded-xl border border-indigo-500/15 bg-indigo-500/5 p-5 md:p-6">
-          <h3 class="text-xs font-mono text-indigo-400 tracking-widest uppercase mb-4">
+        <div class="rounded-xl border border-[#e8ff5c]/15 bg-[#e8ff5c]/5 p-5 md:p-6">
+          <h3 class="text-xs font-mono text-[#e8ff5c] tracking-widest uppercase mb-4">
             Impact / Result
           </h3>
           <ul class="flex flex-col gap-2.5">
@@ -152,7 +152,7 @@ const projects: Project[] = [
               :key="point"
               class="flex items-start gap-3 text-sm text-[#d4d4d4]"
             >
-              <span class="mt-[5px] w-1.5 h-1.5 rounded-full bg-indigo-400 flex-shrink-0" />
+              <span class="mt-[5px] w-1.5 h-1.5 rounded-full bg-[#e8ff5c] flex-shrink-0" />
               {{ point }}
             </li>
           </ul>
@@ -169,7 +169,7 @@ const projects: Project[] = [
               :href="link.href"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 text-sm text-indigo-400 hover:text-indigo-300 transition-colors"
+              class="inline-flex items-center gap-1.5 text-sm text-[#e8ff5c] hover:text-[#d4eb4a] transition-colors"
             >
               {{ link.label }}
               <UIcon name="i-heroicons-arrow-top-right-on-square-20-solid" class="w-3.5 h-3.5" />
@@ -186,7 +186,7 @@ const projects: Project[] = [
       </p>
       <NuxtLink
         to="/contact"
-        class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors duration-200"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold bg-[#e8ff5c] hover:bg-[#d4eb4a] text-[#0f0f0f] transition-colors duration-200"
       >
         Let's talk
         <UIcon name="i-heroicons-arrow-right-20-solid" class="w-4 h-4" />

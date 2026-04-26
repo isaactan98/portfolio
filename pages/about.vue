@@ -72,7 +72,7 @@ const techStack = [
       <div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-6">
         <!-- Profile photo -->
         <div class="relative flex-shrink-0 self-start">
-          <div class="absolute inset-0 rounded-full bg-indigo-600/25 blur-xl scale-125" />
+          <div class="absolute inset-0 rounded-full bg-[#e8ff5c]/15 blur-xl scale-125" />
           <img
             src="~/assets/images/me.png"
             alt="Isaac Tan"
@@ -81,7 +81,7 @@ const techStack = [
         </div>
         <!-- Name + headline -->
         <div>
-          <p class="text-xs font-mono text-indigo-400 font-medium tracking-widest uppercase mb-2">
+          <p class="text-xs font-mono text-[#e8ff5c] font-medium tracking-widest uppercase mb-2">
             About
           </p>
           <p class="text-sm font-medium text-[#a3a3a3] mb-1">Isaac Tan Yu Hao</p>
@@ -137,7 +137,7 @@ const techStack = [
           </p>
           <NuxtLink
             to="/contact"
-            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors duration-200"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-[#e8ff5c] hover:bg-[#d4eb4a] text-[#0f0f0f] transition-colors duration-200"
           >
             Get in touch
             <UIcon name="i-heroicons-arrow-right-20-solid" class="w-4 h-4" />

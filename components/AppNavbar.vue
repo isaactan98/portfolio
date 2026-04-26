@@ -26,7 +26,7 @@ watch(route, () => {
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <NuxtLink
         to="/"
-        class="text-lg font-semibold tracking-tight text-white hover:text-indigo-400 transition-colors duration-200"
+        class="text-lg font-semibold tracking-tight text-white hover:text-[#e8ff5c] transition-colors duration-200"
       >
         Isaac Tan
       </NuxtLink>
@@ -48,7 +48,7 @@ watch(route, () => {
         </NuxtLink>
         <NuxtLink
           to="/contact"
-          class="inline-flex items-center px-4 py-1.5 rounded-lg text-sm font-medium bg-indigo-600 hover:bg-indigo-500 text-white transition-colors duration-200"
+          class="inline-flex items-center px-4 py-1.5 rounded-lg text-sm font-medium bg-[#e8ff5c] hover:bg-[#d4eb4a] text-[#0f0f0f] transition-colors duration-200"
         >
           Hire Me
         </NuxtLink>
@@ -88,7 +88,7 @@ watch(route, () => {
         </NuxtLink>
         <NuxtLink
           to="/contact"
-          class="inline-flex w-fit items-center px-4 py-2 rounded-lg text-sm font-medium bg-indigo-600 hover:bg-indigo-500 text-white transition-colors"
+          class="inline-flex w-fit items-center px-4 py-2 rounded-lg text-sm font-medium bg-[#e8ff5c] hover:bg-[#d4eb4a] text-[#0f0f0f] transition-colors"
         >
           Hire Me
         </NuxtLink>
@@ -96,7 +96,7 @@ watch(route, () => {
     </Transition>
 
     <div
-      class="absolute bottom-0 left-0 h-[2px] bg-indigo-500/60 transition-[width] duration-150"
+      class="absolute bottom-0 left-0 h-[2px] bg-[#e8ff5c] transition-[width] duration-150"
       :style="{ width: scrollProgress + '%' }"
     />
   </header>

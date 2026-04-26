@@ -17,18 +17,18 @@ defineProps<{
       class="absolute left-0 top-1 w-5 h-5 rounded-full border-2 flex items-center justify-center"
       :class="
         current
-          ? 'border-indigo-500 bg-indigo-500/15'
+          ? 'border-[#e8ff5c] bg-[#e8ff5c]/10'
           : 'border-white/15 bg-[#1a1a1a]'
       "
     >
       <div
         v-if="current"
-        class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"
+        class="w-2 h-2 rounded-full bg-[#e8ff5c] animate-pulse"
       />
     </div>
 
     <div>
-      <span class="text-xs font-mono text-indigo-400 font-medium">{{ year }}</span>
+      <span class="text-xs font-mono text-[#e8ff5c] font-medium">{{ year }}</span>
       <h4 class="text-sm font-semibold text-[#f5f5f5] mt-0.5 leading-snug">{{ title }}</h4>
       <p v-if="description" class="text-xs text-[#a3a3a3] mt-1 leading-relaxed">
         {{ description }}
