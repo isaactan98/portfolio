@@ -32,54 +32,81 @@ const featuredProjects = [
 
 <template>
   <div>
-    <!-- Hero -->
+    <!-- Hero: split layout — text left, photo right -->
     <section class="relative min-h-[92vh] flex items-center hero-grid overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-b from-indigo-950/8 via-transparent to-[#0f0f0f] pointer-events-none" />
 
-      <div class="relative max-w-5xl mx-auto px-6 py-28">
-        <!-- Availability badge -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/8 text-emerald-400 text-xs font-medium mb-10">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          Available for freelance projects
+      <div class="relative max-w-5xl mx-auto px-6 py-20 w-full">
+        <div class="grid md:grid-cols-[1fr_auto] gap-12 md:gap-16 items-center">
+
+          <!-- Left: text -->
+          <div>
+            <!-- Availability badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/8 text-emerald-400 text-xs font-medium mb-8">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Available for freelance projects
+            </div>
+
+            <!-- Headline: pure white + single accent underline -->
+            <h1 class="text-5xl md:text-[62px] font-extrabold tracking-tight leading-[1.08] text-white mb-5">
+              Full-Stack Engineer<br />
+              building
+              <span class="relative inline-block ml-2">
+                enterprise
+                <span class="absolute -bottom-1 left-0 w-full h-[3px] bg-indigo-500 rounded-full" />
+              </span><br />
+              &amp; self-hosted systems
+            </h1>
+
+            <!-- Sub-headline (no duplicate) -->
+            <p class="text-base md:text-lg text-[#a3a3a3] mb-8">
+              NCS Group · Singapore · Nuxt 3 · FastAPI · TypeScript
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4">
+              <NuxtLink
+                to="/projects"
+                class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors duration-200"
+              >
+                View My Work
+                <UIcon name="i-heroicons-arrow-right-20-solid" class="w-4 h-4" />
+              </NuxtLink>
+              <NuxtLink
+                to="/contact"
+                class="inline-flex items-center justify-center px-7 py-3.5 rounded-lg text-sm font-semibold border border-white/15 hover:border-white/30 hover:bg-white/5 text-white transition-all duration-200"
+              >
+                Get In Touch
+              </NuxtLink>
+            </div>
+          </div>
+
+          <!-- Right: profile photo (desktop only) -->
+          <div class="hidden md:flex justify-center items-center">
+            <div class="relative">
+              <div class="absolute inset-4 rounded-2xl bg-indigo-600/20 blur-3xl" />
+              <img
+                src="~/assets/images/me.png"
+                alt="Isaac Tan"
+                class="relative w-64 h-64 lg:w-72 lg:h-72 object-cover object-top rounded-2xl border border-white/10 shadow-2xl"
+              />
+            </div>
+          </div>
+
         </div>
+      </div>
 
-        <!-- Headline -->
-        <h1 class="text-5xl md:text-[68px] font-extrabold tracking-tight leading-[1.05] text-white mb-6 max-w-3xl">
-          Full-Stack Engineer<br />
-          <span class="gradient-text">building enterprise</span><br />
-          <span class="gradient-text">&amp; self-hosted systems</span>
-        </h1>
-
-        <!-- Sub-headline -->
-        <p class="text-lg md:text-xl text-[#a3a3a3] mb-3 max-w-xl">
-          NCS Group · Singapore · Nuxt 3 · FastAPI · TypeScript
-        </p>
-
-        <p class="text-sm text-[#6b6b6b] mb-10">
-          3+ years enterprise · NCS Group · Delivered 30–50% ahead of estimates
-        </p>
-
-        <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row gap-4">
-          <NuxtLink
-            to="/projects"
-            class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors duration-200"
-          >
-            View My Work
-            <UIcon name="i-heroicons-arrow-right-20-solid" class="w-4 h-4" />
-          </NuxtLink>
-          <NuxtLink
-            to="/contact"
-            class="inline-flex items-center justify-center px-7 py-3.5 rounded-lg text-sm font-semibold border border-white/15 hover:border-white/30 hover:bg-white/5 text-white transition-all duration-200"
-          >
-            Get In Touch
-          </NuxtLink>
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/20">
+        <span class="text-[10px] font-mono tracking-widest uppercase">scroll</span>
+        <div class="animate-bounce">
+          <UIcon name="i-heroicons-chevron-down-20-solid" class="w-5 h-5" />
         </div>
       </div>
     </section>
 
     <!-- Featured Projects -->
-    <section class="max-w-5xl mx-auto px-6 pb-24">
+    <section class="max-w-5xl mx-auto px-6 pt-20 pb-24">
       <div class="fade-up mb-10">
         <p class="text-xs font-mono text-indigo-400 font-medium tracking-widest uppercase mb-3">
           01 — Selected Work
@@ -109,25 +136,25 @@ const featuredProjects = [
       </div>
     </section>
 
-    <!-- Freelance CTA -->
-    <section class="max-w-5xl mx-auto px-6 pb-24">
-      <div
-        class="fade-up group relative rounded-2xl border border-indigo-500/20 bg-[#141420] p-10 md:p-14 text-center overflow-hidden hover:border-indigo-500/35 hover:shadow-[0_0_48px_rgba(99,102,241,0.08)] transition-all duration-500"
-      >
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/8 via-transparent to-violet-600/5 group-hover:from-indigo-600/12 transition-all duration-500 pointer-events-none" />
-        <div class="relative">
-          <p class="text-xs font-mono text-indigo-400 font-medium tracking-widest uppercase mb-5">
+    <!-- Freelance: full-width border section (no card) -->
+    <section class="relative border-t border-b border-white/8 py-20 fade-up">
+      <div class="absolute inset-0 bg-gradient-to-r from-indigo-950/12 via-transparent to-transparent pointer-events-none" />
+      <div class="relative max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-16">
+        <div class="max-w-xl">
+          <p class="text-xs font-mono text-indigo-400 font-medium tracking-widest uppercase mb-4">
             02 — Freelance
           </p>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
             Need a web app, internal tool, or automation?
           </h2>
-          <p class="text-[#a3a3a3] mb-8 max-w-md mx-auto text-sm leading-relaxed">
+          <p class="text-[#a3a3a3] text-sm leading-relaxed">
             I work with SME owners and startup founders to build practical software that saves time and solves real problems. Fast delivery, no fluff.
           </p>
+        </div>
+        <div class="flex-shrink-0">
           <NuxtLink
             to="/contact"
-            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors duration-200"
+            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors duration-200 whitespace-nowrap"
           >
             Start a Conversation
           </NuxtLink>

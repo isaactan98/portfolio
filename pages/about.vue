@@ -69,14 +69,28 @@ const techStack = [
   <div class="max-w-5xl mx-auto px-6 py-20">
     <!-- Header -->
     <div class="fade-up mb-16">
-      <p class="text-xs font-mono text-indigo-400 font-medium tracking-widest uppercase mb-3">
-        About
-      </p>
-      <p class="text-sm font-medium text-[#a3a3a3] mb-2">Isaac Tan Yu Hao</p>
-      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-        Engineer who ships<br />
-        <span class="gradient-text">full-stack and hardware</span>
-      </h1>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-6">
+        <!-- Profile photo -->
+        <div class="relative flex-shrink-0 self-start">
+          <div class="absolute inset-0 rounded-full bg-indigo-600/25 blur-xl scale-125" />
+          <img
+            src="~/assets/images/me.png"
+            alt="Isaac Tan"
+            class="relative w-20 h-20 object-cover object-top rounded-full border border-white/15"
+          />
+        </div>
+        <!-- Name + headline -->
+        <div>
+          <p class="text-xs font-mono text-indigo-400 font-medium tracking-widest uppercase mb-2">
+            About
+          </p>
+          <p class="text-sm font-medium text-[#a3a3a3] mb-1">Isaac Tan Yu Hao</p>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Engineer who ships<br />
+            <span class="gradient-text">full-stack and hardware</span>
+          </h1>
+        </div>
+      </div>
       <p class="text-lg text-[#a3a3a3] max-w-2xl leading-relaxed">
         Full-Stack Software Engineer based in Singapore, originally from Melaka, Malaysia. 3+ years of enterprise software development at NCS Group. I build internal systems, self-hosted tools, and side projects that solve real problems.
       </p>
