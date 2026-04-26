@@ -13,28 +13,31 @@ const heroStats = [
 
 const featuredProjects = [
   {
-    title: 'Low No Attendance System',
-    type: 'Enterprise · Internal System',
-    tags: ['Nuxt 3', 'FastAPI', 'PostgreSQL'],
+    title: 'Shadow Anime',
+    type: 'Personal · Full-Stack',
+    tags: ['Nuxt 3', 'Vue 3', 'TypeScript', 'REST API'],
     description:
-      'Enterprise internal system for automated attendance tracking and reporting. Delivered 30–50% ahead of Business Analyst time estimates.',
-    slug: 'attendance-system'
+      'A self-built anime streaming platform with real-time data, search, and a clean UI. Built with Nuxt 3 and third-party anime API integration.',
+    slug: 'shadow-anime',
+    github: 'https://github.com/isaactan98/shadow-anime'
+  },
+  {
+    title: 'Nuxt Video Chat',
+    type: 'Personal · Real-Time',
+    tags: ['Nuxt', 'Express', 'WebRTC', 'Socket.io'],
+    description:
+      'Peer-to-peer video chat web app built with WebRTC and Socket.io. No third-party video SDK — raw WebRTC implementation with Nuxt frontend and Express backend.',
+    slug: 'nuxt-video-chat',
+    github: 'https://github.com/isaactan98/nuxt_video_chat_app'
   },
   {
     title: 'Expense Tracker — Dual Currency PWA',
-    type: 'Personal · PWA',
-    tags: ['Nuxt 3', 'Express.js', 'Docker', 'SQLite'],
+    type: 'Personal · Self-Hosted',
+    tags: ['Nuxt 3', 'Express', 'SQLite', 'Docker'],
     description:
-      'Self-hosted PWA for SGD/MYR dual-currency expense tracking. Offline-capable, zero cloud dependency, runs on my own server.',
-    slug: 'expense-tracker'
-  },
-  {
-    title: 'Miku AI Assistant',
-    type: 'Hardware · Local AI',
-    tags: ['Raspberry Pi 5', 'Python', 'Local AI'],
-    description:
-      'Local AI assistant on a Raspberry Pi 5 with animated Waveshare LCD and custom 3D-printed case. Fully offline capable.',
-    slug: 'miku-assistant'
+      'Self-hosted PWA for SGD/MYR expense tracking. Offline-first, zero cloud dependency. Runs entirely on a home server via Docker + Cloudflare Tunnel.',
+    slug: 'expense-tracker',
+    github: 'https://github.com/isaactan98/expense-tracker'
   }
 ]
 </script>

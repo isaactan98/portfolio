@@ -21,64 +21,64 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: 'attendance-system',
-    title: 'Low No Attendance System',
-    category: 'Enterprise · Internal Tool',
-    tags: ['Nuxt 3', 'FastAPI', 'PostgreSQL', 'TypeScript', 'Docker'],
+    id: 'shadow-anime',
+    title: 'Shadow Anime',
+    category: 'Personal · Full-Stack',
+    tags: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Tailwind CSS', 'REST API'],
     problem:
-      'Manual tracking of low or no attendance records was error-prone and slow. Business analysts estimated a long delivery timeline across multiple phases — the complexity of multi-phase requirements made this a high-effort initiative.',
+      'Most anime sites are either ad-heavy, unstable, or require accounts. I wanted a clean, fast, self-controlled streaming interface I could use daily — without ads, sign-ups, or unreliable third-party players.',
     solution:
-      'A full-stack internal system covering Phases 1–3: automated attendance detection, data rectification workflows, and scheduled customizable reporting. Delivered end-to-end from frontend UI to backend API and database layer, working across the full stack independently.',
+      'A full anime streaming platform with search, genre filtering, episode tracking, and a clean dark UI. Pulls real-time data from a third-party anime API. Built as an iterative improvement over the first version (anime-nuxt-app), with a more polished UI and better data handling.',
     tech:
-      'Nuxt 3 frontend with TypeScript for the dashboard and data entry flows. FastAPI backend exposing REST endpoints for attendance logic and report generation. PostgreSQL database with optimised query patterns. Dockerized deployment within the enterprise environment.',
+      'Nuxt 3 and Vue 3 for the frontend with TypeScript throughout. Tailwind CSS for styling. Third-party REST API (Jikan/AniList) for real-time anime metadata, episode data, and search. Deployed on Vercel.',
     impact: [
-      'Delivered 30–50% ahead of Business Analyst time estimates',
-      'Reduced manual effort significantly for the operations team',
-      'Part of a larger suite of service requests totalling 300+ man-days'
+      '13+ GitHub stars on the original version',
+      '7 forks — other developers actively building on top of it',
+      'Actively used as a personal daily driver'
     ],
-    links: []
+    links: [{ label: 'GitHub', href: 'https://github.com/isaactan98/shadow-anime' }]
+  },
+  {
+    id: 'nuxt-video-chat',
+    title: 'Nuxt Video Chat',
+    category: 'Personal · Real-Time',
+    tags: ['Nuxt.js', 'Express.js', 'Socket.io', 'WebRTC', 'Node.js'],
+    problem:
+      'Most video chat tutorials rely on third-party SDKs — Daily.co, Twilio, Agora — which abstract away the hard parts. I wanted to understand WebRTC at a protocol level by building a working implementation from scratch, without any external video SDK.',
+    solution:
+      'A peer-to-peer video chat web application using raw WebRTC for media streaming and Socket.io for signaling. Nuxt.js handles the frontend; an Express backend manages the signaling server. No external video SDKs involved — ICE, SDP, and peer connections are all handled manually.',
+    tech:
+      'Nuxt.js frontend for the UI and room management. Express.js + Socket.io backend for WebRTC signaling (offer/answer exchange, ICE candidate relay). Native browser WebRTC API for peer connections and media streams. Node.js runtime.',
+    impact: [
+      'Demonstrates low-level networking and real-time systems knowledge beyond typical web dev scope',
+      'Full understanding of signaling flows, ICE candidates, and SDP negotiation',
+      'Working multi-user video sessions without any third-party video dependency'
+    ],
+    links: [{ label: 'GitHub', href: 'https://github.com/isaactan98/nuxt_video_chat_app' }]
   },
   {
     id: 'expense-tracker',
     title: 'Expense Tracker — Dual Currency PWA',
-    category: 'Personal Tool · Self-Hosted',
+    category: 'Personal · Self-Hosted',
     tags: ['Nuxt 3', 'Express.js', 'SQLite', 'Docker', 'Cloudflare Tunnel'],
     problem:
-      'Living and commuting between Singapore and Johor Bahru means dealing with SGD and MYR daily. Existing expense apps either lack real dual-currency support, lock you into cloud accounts, or are too complex for everyday personal use.',
+      'Living and commuting between Singapore and Johor Bahru means dealing with SGD and MYR daily. Existing expense apps either lack real dual-currency support, lock data in the cloud, or are overly complex for everyday personal use.',
     solution:
-      'A self-hosted Progressive Web App for personal expense tracking. Supports SGD/MYR dual currency with live conversion, works offline as a PWA, and runs entirely on a home server via Docker Compose and Cloudflare Tunnel — no third-party cloud dependency whatsoever.',
+      'A self-hosted Progressive Web App for personal expense tracking. Supports SGD/MYR with live conversion, works offline as a PWA, and runs entirely on a home server via Docker Compose + Cloudflare Tunnel — no third-party cloud dependency whatsoever.',
     tech:
-      'Nuxt 3 frontend (port 18080) configured as a PWA with offline caching. Express.js REST API (port 3000) handling transactions and categories. SQLite for lightweight, file-based persistent storage. Docker Compose for local orchestration. Cloudflare Tunnel for secure remote access without opening ports.',
+      'Nuxt 3 frontend configured as a PWA with offline caching. Express.js REST API handling transactions and categories. SQLite for lightweight, file-based persistent storage. Docker Compose for local orchestration. Cloudflare Tunnel for secure remote access without opening ports.',
     impact: [
-      'Fully operational daily driver — used personally every day',
-      'Zero cloud dependency and complete data ownership',
-      'Demonstrates end-to-end product ownership: architecture, build, deploy, and maintain'
+      'Fully operational personal daily driver — used every day',
+      'Complete data ownership — no third-party cloud',
+      'Demonstrates full product lifecycle: architecture, build, deploy, and maintain'
     ],
     links: [{ label: 'Live demo available on request (self-hosted)', href: null }]
-  },
-  {
-    id: 'miku-assistant',
-    title: 'Miku AI Assistant — Raspberry Pi Voice & Display System',
-    category: 'Hardware · Personal Project',
-    tags: ['Raspberry Pi 5', 'Python', 'Local LLM', 'Waveshare LCD', '3D Printing'],
-    problem:
-      'Commercial AI assistants are cloud-dependent, always-listening, and feel generic. I wanted a local, always-on AI assistant with real physical presence — running entirely on my own hardware, without sending data to any external API.',
-    solution:
-      'An AI assistant built on a Raspberry Pi 5 with a Waveshare LCD display showing an animated Hatsune Miku character. Local LLM handles inference entirely on-device. The enclosure is a custom 3D-printed case with STL file modifications made using Python trimesh boolean operations to improve airflow and fit the specific hardware layout.',
-    tech:
-      'Raspberry Pi 5 (8GB RAM) as the compute platform. Waveshare LCD display for the animated character interface. Python for system integration, display control, and LLM interfacing. Local LLM for fully offline inference. Custom STL modifications via Python/trimesh for 3D enclosure design.',
-    impact: [
-      'Fully offline-capable local AI assistant — no internet required',
-      'Demonstrates hardware + software integration depth beyond typical web dev scope',
-      'Shows initiative: 3D mechanical design, embedded systems, local AI deployment all in one project'
-    ],
-    links: []
   }
 ]
 </script>
 
 <template>
-  <div class="max-w-5xl mx-auto px-6 py-20">
+  <div class="max-w-5xl mx-auto px-6 pt-20 pb-10">
     <!-- Header -->
     <div class="fade-up mb-16">
       <p class="text-xs font-mono text-[#e8ff5c] font-medium tracking-widest uppercase mb-3">
@@ -86,7 +86,7 @@ const projects: Project[] = [
       </p>
       <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Projects</h1>
       <p class="text-lg text-[#a3a3a3]">
-        Three case studies spanning enterprise systems, personal tooling, and hardware.
+        Three case studies spanning full-stack web, real-time systems, and self-hosted tooling.
       </p>
     </div>
 
@@ -179,14 +179,17 @@ const projects: Project[] = [
       </article>
     </div>
 
-    <!-- CTA -->
-    <div class="fade-up mt-16 text-center">
-      <p class="text-[#a3a3a3] text-sm mb-4">
+    <!-- More on GitHub — dynamic, hidden if API fails -->
+    <GitHubRepos username="isaactan98" />
+
+    <!-- Footer CTA -->
+    <div class="fade-up mt-12 pt-10 border-t border-white/8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-[#6b6b6b] text-sm">
         Interested in working together on something similar?
       </p>
       <NuxtLink
         to="/contact"
-        class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold bg-[#e8ff5c] hover:bg-[#d4eb4a] text-[#0f0f0f] transition-colors duration-200"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold bg-[#e8ff5c] hover:bg-[#d4eb4a] text-[#0c0c0c] transition-colors duration-200 whitespace-nowrap"
       >
         Let's talk
         <UIcon name="i-heroicons-arrow-right-20-solid" class="w-4 h-4" />
